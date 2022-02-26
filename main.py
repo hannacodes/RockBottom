@@ -38,5 +38,8 @@ def level_1():
         pg.display.update()
         clock.tick(60)
 
+def level_2():
+    pass
+
 if __name__ == '__main__':
     level_1()
