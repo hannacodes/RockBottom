@@ -58,9 +58,16 @@ class Level:
                 if player.direction.y > 0:
                     player.rect.bottom = sprite.rect.top
                     player.direction.y = 0
+                    player.on_floor = True
                 elif player.direction.y < 0:
                     player.rect.top = sprite.rect.bottom 
                     player.direction.y = 0
+                    player.on_ceiling = True
+
+        if player.on_floor and player.direction.y < 0 or player.direction.y > 1: 
+            player.on_floor = False
+        if player.on_ceiling and player.direction.y > 0:
+            player.on_ceiling = False
 
 
     def horizontal_collision(self):
@@ -73,9 +80,16 @@ class Level:
                 if player.direction.x < 0:
                     player.rect.left = sprite.rect.right
                     self.curr_x = player.rect.left
+                    player.on_left = True
                 elif player.direction.x > 0: 
                     player.rect.right = sprite.rect.left
                     self.curr_x = player.rect.right
+                    player.on_right = True
+        
+        if player.on_left and (player.rect.left < self.curr_x or player.direction.x >= 0):
+            player.on_left = False
+        if player.on_right and (player.rect.right > self.curr_x or player.direction.x <= 0):
+            player.on_right = False
 
     def update(self):
         self.tiles.update(self.shift_x)

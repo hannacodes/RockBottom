@@ -14,6 +14,11 @@ class Player(pg.sprite.Sprite):
         self.gravity = 0.8
         self.jump_speed = -16
 
+        self.on_floor = False
+        self.on_ceiling = False
+        self.on_left = False
+        self.on_right = False
+
     def key_input(self):
         keys = pg.key.get_pressed()
         if keys[pg.K_RIGHT]:
@@ -22,7 +27,7 @@ class Player(pg.sprite.Sprite):
             self.direction.x = -1
         else:
             self.direction.x = 0
-        if keys[pg.K_SPACE]:
+        if keys[pg.K_SPACE] and self.on_floor:
             self.jump()
     
     def update_gravity(self):
