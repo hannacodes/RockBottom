@@ -41,7 +41,7 @@ class Level:
                     boost = Boost((x,y), self.lvl)
                     self.boosts.add(boost)
                 if col == 'E':
-                    end = End((x,y), tile_size/2, tile_size)
+                    end = End((x,y))
                     self.end.add(end)
 
     def scroll_x(self):
