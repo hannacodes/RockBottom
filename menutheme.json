@@ -1,7 +1,5 @@
 {
-    "label":{
-        "font":{
-            "name": "dogicapixel"
-        }
+    "text_box":{
+        "normal_bg": "#000000"
     }
 }
