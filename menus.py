@@ -15,8 +15,8 @@ def winner1(screen):
     height = screen_height/7
 
     t_layout_rect = pg.Rect(top, left, width, height)
-    title = pgui.elements.UITextBox( "<font face = 'verdana' color = '#ffffff' size = 7 >You win!</font>",
-                                    relative_rect=t_layout_rect,
+    title = pgui.elements.UILabel( relative_rect=t_layout_rect, 
+                                    text = 'You Win!',
                                     manager=manager )
     
     b1_layout_rect = pg.Rect(top, left+height+20, width, height)
@@ -44,6 +44,7 @@ def winner1(screen):
                 if event.ui_element == button2:
                     running = False 
                     level_select(screen)
+
             manager.process_events(event)
         clock.tick(60)
 
@@ -55,8 +56,8 @@ def game_over(screen):
     height = screen_height/7
 
     t_layout_rect = pg.Rect(top, left, width, height)
-    title = pgui.elements.UITextBox( "<font face = 'verdana' color = '#ffffff' size = 7 >You died!</font>",
-                                    relative_rect=t_layout_rect,
+    title = pgui.elements.UILabel( relative_rect=t_layout_rect, 
+                                    text = 'You Died!',
                                     manager=manager )
     
     b1_layout_rect = pg.Rect(top, left+height+20, width, height)
