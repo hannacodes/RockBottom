@@ -25,9 +25,8 @@ class Level:
                     rock = Player((x,y))
                     self.player.add(rock)
 
-
-
-    def run(self):
+    def update(self):
         self.tiles.draw(self.display_surf)
 
+        self.player.update()
         self.player.draw(self.display_surf)

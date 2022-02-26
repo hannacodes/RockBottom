@@ -14,7 +14,7 @@ while True:
             sys.exit()
         
     screen.fill((0,0,0))
-    level.run()
+    level.update()
 
     pg.display.update()
     clock.tick(60)
