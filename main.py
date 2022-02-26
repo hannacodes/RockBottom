@@ -11,8 +11,7 @@ def level_1():
     clock = pg.time.Clock()
     level = Level(level_tutorial_map, screen, 1)
 
-    forest_surf = pg.image.load("art_assets/forest-level/forest-level-background.png").convert_alpha()
-    forest_surf = pg.transform.rotozoom(forest_surf, 0, 3)
+    forest_surf = pg.image.load("art_assets/forest-level/forest-level-background-altered1.png").convert_alpha()
 
     game_active = True
     win_condition = False
