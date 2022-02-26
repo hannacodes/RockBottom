@@ -43,7 +43,7 @@ def winner1(screen):
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
                     level_2()
-                if event.ui_element == button1: 
+                if event.ui_element == button2: 
                     update_str = level_1()
                     if(update_str == "Game Over"):
                         game_over(screen)
