@@ -10,7 +10,9 @@ class Player(pg.sprite.Sprite):
 
         # direction has both x and y
         self.direction = pg.math.Vector2()
-        self.speed = 6
+        self.speed = pg.math.Vector2()
+        self.speed.x = 6
+        self.speed.y = 6
         self.gravity = 0.8
         self.jump_speed = -16
 

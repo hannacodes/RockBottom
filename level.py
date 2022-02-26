@@ -51,13 +51,13 @@ class Level:
 
         if player_x < screen_width/4 and direction_x < 0:
             self.shift_x = speed 
-            player.speed = 0
+            player.speed.x = 0
         elif player_x > screen_width-(screen_width/4) and direction_x > 0:
             self.shift_x = -speed
-            player.speed = 0
+            player.speed.x = 0
         else:
             self.shift_x = 0
-            player.speed = speed
+            player.speed.x = speed
     
     def scroll_y(self):
         player = self.player.sprite
@@ -67,14 +67,14 @@ class Level:
         
         #print(player.speed)
         if player_y < screen_height/4 and direction_y < 0:
-            self.shift_y = speed 
-            player.speed = 0
+            self.shift_y = -speed 
+            player.speed.y = 0
         if player_y < 0 and direction_y > 0:
-            self.shift_y = -speed
-            player.speed = 0
+            self.shift_y = speed
+            player.speed.y = 0
         else:
             self.shift_y = 0
-            player.speed = speed
+            player.speed.y = -speed
 
     '''
     Collision 
@@ -106,7 +106,7 @@ class Level:
     def horizontal_collision(self):
         player = self.player.sprite 
         # apply horizontal movement
-        player.rect.x += player.direction.x * player.speed 
+        player.rect.x += player.direction.x * player.speed.x
         for sprite in self.tiles.sprites():
             # check horizontal collision
             if sprite.rect.colliderect(player.rect):
