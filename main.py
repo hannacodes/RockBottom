@@ -25,6 +25,9 @@ def level_1():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     running = False
+        if win_condition: 
+            running = False
+            return "You Win"
         if game_active:    
             screen.fill((0,0,0))
             game_active = level.update()
@@ -32,10 +35,6 @@ def level_1():
         else:
              running = False
              return "Game Over"
-        if win_condition: 
-            running = False
-            return "You Win"
-
         pg.display.update()
         clock.tick(60)
 
