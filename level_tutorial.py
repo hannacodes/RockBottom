@@ -1,6 +1,3 @@
-import pygame, sys
-from settings import *
-
 level_tutorial_map = [
 '                                   B    B                                       ',
 '                               B   F    F                                       ',
