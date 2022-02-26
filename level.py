@@ -121,7 +121,7 @@ class Level:
 
     def end_collide(self):
         player = self.player.sprite
-        if pg.sprite.spritecollide(player, self.end):
+        if pg.sprite.spritecollideany(player, self.end):
             return True
         return False
 
@@ -131,7 +131,7 @@ class Level:
 
     def isEnd(self):
         return self.end_collide()
-        
+
     def update(self):
         self.update_tile(self.tiles)
         self.update_tile(self.spikes)
