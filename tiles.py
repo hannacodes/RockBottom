@@ -19,3 +19,12 @@ class Spike(pg.sprite.Sprite):
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x):
         self.rect.x += shift_x
+
+class Boost(pg.sprite.Sprite):
+    def __init__(self, pos, width, height):
+        super().__init__()
+        self.image = pg.Surface((width, height))
+        self.image.fill((0, 200, 0))
+        self.rect = self.image.get_rect(topleft = pos)
+    def update(self, shift_x):
+        self.rect.x += shift_x
