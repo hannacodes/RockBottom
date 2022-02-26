@@ -119,10 +119,19 @@ class Level:
         else:
             player.jump_speed = -16
 
+    def end_collide(self):
+        player = self.player.sprite
+        if pg.sprite.spritecollide(player, self.end):
+            return True
+        return False
+
     def update_tile(self, sprites):
         sprites.update(self.shift_x)
         sprites.draw(self.display_surf)
 
+    def isEnd(self):
+        return self.end_collide()
+        
     def update(self):
         self.update_tile(self.tiles)
         self.update_tile(self.spikes)

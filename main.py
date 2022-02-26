@@ -28,12 +28,13 @@ def level_1():
         if game_active:    
             screen.fill((0,0,0))
             game_active = level.update()
-        elif win_condition: 
-            running = False
-            return "You Win"
+            win_condition = level.end_collide()
         else:
              running = False
              return "Game Over"
+        if win_condition: 
+            running = False
+            return "You Win"
 
         pg.display.update()
         clock.tick(60)
