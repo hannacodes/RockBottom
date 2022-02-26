@@ -7,3 +7,6 @@ class Tile(pg.sprite.Sprite):
         self.image = pg.Surface((size, size))
         self.image.fill((120,120,120)) #gray tiles
         self.rect = self.image.get_rect(topleft = pos)
+    #for scrolling
+    def update(self, shift_x):
+        self.rect.x += shift_x
