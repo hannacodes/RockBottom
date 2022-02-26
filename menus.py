@@ -49,6 +49,8 @@ def winner1(screen):
                         game_over(screen)
                     if(update_str == "You Win" ):
                         winner1(screen)
+                        
+                    running=False
 
                 if event.ui_element == button3:
                     running = False 
