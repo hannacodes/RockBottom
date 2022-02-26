@@ -106,6 +106,14 @@ class Level:
         if pg.sprite.spritecollideany(player, self.spikes):
             return True
         return False
+    
+    def boost_collide(self):
+        player = self.player.sprite 
+        if pg.sprite.spritecollideany(player, self.boosts):
+            player.jump_speed = -25
+            player.jump()
+        else:
+            player.jump_speed = -16
 
     def update(self):
         self.tiles.update(self.shift_x)
@@ -114,6 +122,7 @@ class Level:
         self.spikes.draw(self.display_surf)
         self.boosts.update(self.shift_x)
         self.boosts.draw(self.display_surf)
+        self.boost_collide()
         self.scroll_x()
 
         player = self.player.sprite 
