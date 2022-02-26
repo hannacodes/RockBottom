@@ -1,4 +1,5 @@
 
+from cProfile import run
 import pygame as pg, pygame_gui as pgui, sys
 clock = pg.time.Clock()
 pg.init()
@@ -7,8 +8,37 @@ bg_color = (123, 123, 123)
 
 screen_width, screen_height = 1200, 900
 
+def level_select(screen):
+    pass
+
+def help(screen):
+    manager = pgui.UIManager((screen_height, screen_width))
+    help = "Temporary help method"
+    help_layout_rect = pg.Rect(screen_width/4, screen_height/12, ( screen_width/3 )* 2, screen_height/2)
+    help = pgui.elements.UITextBox( help, relative_rect=help_layout_rect, manager=manager )
+    exit_layout_rect = pg.Rect(screen_width/4, screen_height/12 + screen_height/2, screen_width/10, screen_height/12)
+    exit = pgui.elements.UIButton(relative_rect=exit_layout_rect, text='Exit', manager=manager)
+    running = True
+    while running: 
+        screen.fill(bg_color)
+        manager.update(60/1000.0)
+        manager.draw_ui(screen)
+        pg.display.update()
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_ESCAPE:
+                    running = False
+            if event.type == pgui.UI_BUTTON_PRESSED:
+                if event.ui_element == exit:
+                    running = False
+            
+            manager.process_events(event)
+
 def main_menu( screen ):
-    
+
     manager = pgui.UIManager((screen_width, screen_height))
     manager.add_font_paths(font_name = 'dogica', regular_path = '/fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
     manager.add_font_paths(font_name = 'dogicapixel', regular_path = '/fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
@@ -18,7 +48,7 @@ def main_menu( screen ):
     height = screen_height/7
 
     t_layout_rect = pg.Rect(top, left, width, height)
-    title = pgui.elements.UITextBox( "<font face = 'verdana' color = '#ffffff' size = 20.0 >Rock Bottom</font>",
+    title = pgui.elements.UITextBox( "<font face = 'verdana' color = '#ffffff' size = 7 >Rock Bottom</font>",
                                     relative_rect=t_layout_rect,
                                     manager=manager )
     
@@ -43,8 +73,13 @@ def main_menu( screen ):
                 if event.key == pg.K_ESCAPE:
                     running = False
             if event.type == pgui.UI_BUTTON_PRESSED:
-                pass
-            
+                if event.ui_element == button1:
+                    level_select(screen)
+                if event.ui_element == button2:
+                    help(screen)
+                if event.ui_element == button3:
+                    running = False
+
             manager.process_events(event)
         
     clock.tick(60)
