@@ -16,8 +16,9 @@ class Tile(pg.sprite.Sprite):
         self.rect.y += shift_y
 
 class Spike(pg.sprite.Sprite):
-    def __init__(self, pos, width, height):
+    def __init__(self, pos, width, height, lvl):
         super().__init__()
+        #if lvl == 1:
         self.image = pg.Surface((width, height))
         self.image.fill((255,120,120))
         self.rect = self.image.get_rect(topleft = pos)
@@ -26,10 +27,10 @@ class Spike(pg.sprite.Sprite):
         self.rect.y += shift_y
 
 class Boost(pg.sprite.Sprite):
-    def __init__(self, pos, width, height):
+    def __init__(self, pos, lvl):
         super().__init__()
-        self.image = pg.Surface((width, height))
-        self.image.fill((0, 200, 0))
+        if lvl == 1:
+            self.image = pg.image.load("art_assets/forest-level/bouncy-mushroom.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
         self.rect.x += shift_x
