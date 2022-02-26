@@ -23,8 +23,9 @@ def winner1(screen):
     b1_layout_rect = pg.Rect(top, left+height+20, width, height)
     button1 = pgui.elements.UIButton(relative_rect=b1_layout_rect, text='Next Level', manager=manager)
     b2_layout_rect = pg.Rect(top, left+height*2+20, width, height)
-    button2 = pgui.elements.UIButton(relative_rect=b2_layout_rect, text='Exit', manager=manager)
-
+    button2 = pgui.elements.UIButton(relative_rect=b2_layout_rect, text='Retry Level', manager=manager)
+    b3_layout_rect = pg.Rect(top, left+height*3+20, width, height)
+    button3 = pgui.elements.UIButton(relative_rect=b3_layout_rect, text='Exit', manager=manager)
     running = True 
     while running: 
         screen.fill(bg_color)
@@ -42,7 +43,14 @@ def winner1(screen):
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
                     level_2()
-                if event.ui_element == button2:
+                if event.ui_element == button1: 
+                    update_str = level_1()
+                    if(update_str == "Game Over"):
+                        game_over(screen)
+                    if(update_str == "You Win" ):
+                        winner1(screen)
+
+                if event.ui_element == button3:
                     running = False 
                     level_select(screen)
 
@@ -87,6 +95,7 @@ def game_over(screen):
                     if(update_str == "You Win" ):
                         winner1(screen)
                 if event.ui_element == button2:
+                    level_select(screen)
                     return False
             manager.process_events(event)
         clock.tick(60)
