@@ -1,5 +1,4 @@
 import pygame as pg, sys
-import pygame_gui as pgui
 from settings import *
 from level import *
 from level_tutorial import *
