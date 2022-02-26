@@ -3,7 +3,7 @@ from main import level_1, level_2
 clock = pg.time.Clock()
 pg.init()
 
-bg_color = (221, 153, 154)
+bg_color = (130, 95, 118)
 
 screen_width, screen_height = 1200, 900
 
@@ -36,12 +36,14 @@ def winner1(screen):
                 sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    running = False
+                    running = False 
+                    level_select(screen)
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
                     level_2()
                 if event.ui_element == button2:
-                    return False
+                    running = False 
+                    level_select(screen)
             manager.process_events(event)
         clock.tick(60)
 
@@ -77,7 +79,11 @@ def game_over(screen):
                     running = False
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
-                    level_1()
+                    update_str = level_1()
+                    if(update_str == "Game Over"):
+                        game_over(screen)
+                    if(update_str == "You Win" ):
+                        winner1(screen)
                 if event.ui_element == button2:
                     return False
             manager.process_events(event)
@@ -103,16 +109,15 @@ def level_select(screen):
                 sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    level_select()
+                    main_menu(screen)
                 if event.key == pg.K_SPACE:
                     level_1()
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
                     update_str = level_1()
-                    print(update_str)
                     if(update_str == "Game Over"):
                         game_over(screen)
-                    elif(update_str == "You Win" ):
+                    if(update_str == "You Win" ):
                         winner1(screen)
                 if event.ui_element == level2:
                     pass

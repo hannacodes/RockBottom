@@ -22,17 +22,19 @@ def level_1():
                 if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                     game_active = True
                     level = Level(level_tutorial_map, screen)
+                    game_active = level.update()
+                    win_condition = level.end_collide()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     running = False
         if win_condition: 
             running = False
             return "You Win"
-        if game_active:    
+        elif game_active:    
             screen.fill((0,0,0))
             game_active = level.update()
             win_condition = level.end_collide()
-        else:
+        elif not game_active and not win_condition:
              running = False
              return "Game Over"
         pg.display.update()
