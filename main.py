@@ -1,9 +1,7 @@
 import pygame as pg, sys
+from settings import *
 
 pg. init()
-
-screen_width = 1200
-screen_height = 900
 
 screen = pg.display.set_mode((screen_width, screen_height))
 clock = pg.time.Clock()
