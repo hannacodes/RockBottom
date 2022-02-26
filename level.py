@@ -34,7 +34,7 @@ class Level:
                     self.player.add(rock)
                 if col == 'S':
                     y += tile_size/2
-                    spike = Spike((x,y), tile_size, tile_size/2, self.lvl)
+                    spike = Spike((x,y), self.lvl)
                     self.spikes.add(spike)
                 if col == 'B':
                     y += tile_size/2
