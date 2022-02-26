@@ -11,7 +11,8 @@ def level_1():
     level = Level(level_tutorial_map, screen)
     game_active = True
 
-    while True: 
+    running = True
+    while running: 
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 pg.quit()
@@ -20,6 +21,9 @@ def level_1():
                 if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                     game_active = True
                     level = Level(level_tutorial_map, screen)
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_ESCAPE:
+                    running = False
         if game_active:    
             screen.fill((0,0,0))
             game_active = level.update()
