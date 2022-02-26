@@ -11,7 +11,7 @@ def level_1():
     clock = pg.time.Clock()
     level = Level(level_tutorial_map, screen)
     game_active = True
-    game_over_event = False
+    win_condition = False
     running = True
     while running: 
         for event in pg.event.get():
@@ -28,6 +28,9 @@ def level_1():
         if game_active:    
             screen.fill((0,0,0))
             game_active = level.update()
+        elif win_condition: 
+            running = False
+            return "You Win"
         else:
              running = False
              return "Game Over"
