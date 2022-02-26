@@ -2,8 +2,8 @@ import pygame as pg, pygame_gui as pgui, sys
 from main import level_1, level_2
 clock = pg.time.Clock()
 pg.init()
-info = pg.display.Info()
-bg_color = (123, 123, 123)
+
+bg_color = (221, 153, 154)
 
 screen_width, screen_height = 1200, 900
 
