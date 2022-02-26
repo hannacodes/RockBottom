@@ -14,7 +14,7 @@ class Player(pg.sprite.Sprite):
         self.speed.x = 6
         self.speed.y = 6
         self.gravity = 0.8
-        self.jump_speed = -16
+        self.jump_speed = -12
 
         self.on_floor = False
         self.on_ceiling = False

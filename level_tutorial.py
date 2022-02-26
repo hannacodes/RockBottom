@@ -4,8 +4,8 @@ from settings import *
 level_tutorial_map = [
 '                                                                       ',
 '                               B    B    B                             ',
-'                               F    F    F   B   B    B  TT          TT',
-'                          B                  F   F    F  XXTT        XX',
+'                               F    F    F   B   B   B   TT          TT',
+'                          B                  F   F   F   XXTT        XX',
 '                          F                              XX          XX',
 '                                B                        XX        TTXX',
 '                     TTTTTTTTTTTTT    B                  XX   TT     XX',
