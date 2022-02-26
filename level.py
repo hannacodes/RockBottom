@@ -5,8 +5,9 @@ from settings import *
 from player import *
 
 class Level: 
-    def __init__(self, level_map, surf):
+    def __init__(self, level_map, surf, lvl):
         self.display_surf = surf
+        self.lvl = lvl
         self.setup_map(level_map)
         self.shift_x = 0
         self.curr_x = 0
@@ -25,7 +26,7 @@ class Level:
                 x = col_index * tile_size
                 y = row_index * tile_size
                 if col == 'X' or col == 'T':
-                    tile = Tile((x, y), col, tile_size)
+                    tile = Tile((x, y), col, tile_size, self.lvl)
                     self.tiles.add(tile)
                 if col == 'P':
                     y += tile_size/2
