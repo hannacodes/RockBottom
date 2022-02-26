@@ -1,4 +1,5 @@
 import pygame, sys
+from settings import *
 
 level_tutorial_map = [
 '                                                                       ',
@@ -18,3 +19,5 @@ level_tutorial_map = [
 ' XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 ' XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 ]
+
+level_height = tile_size * len(level_tutorial_map)
