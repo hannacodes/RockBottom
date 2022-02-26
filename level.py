@@ -34,11 +34,11 @@ class Level:
                     self.player.add(rock)
                 if col == 'S':
                     y += tile_size/2
-                    spike = Spike((x,y), tile_size, tile_size/2)
+                    spike = Spike((x,y), self.lvl)
                     self.spikes.add(spike)
                 if col == 'B':
                     y += tile_size/2
-                    boost = Boost((x,y), tile_size, tile_size/2)
+                    boost = Boost((x,y), self.lvl)
                     self.boosts.add(boost)
                 if col == 'E':
                     end = End((x,y), tile_size/2, tile_size)
