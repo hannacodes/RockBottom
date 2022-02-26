@@ -10,6 +10,8 @@ class Level:
         self.setup_map(level_map)
         self.shift_x = 0
         self.curr_x = 0
+
+        self.shift_y = 0
         
     def setup_map(self, level_map):
         self.tiles = pg.sprite.Group()
@@ -57,6 +59,22 @@ class Level:
             self.shift_x = 0
             player.speed = speed
     
+    def scroll_y(self):
+        player = self.player.sprite
+        player_y = player.rect.centery
+        direction_y = player.direction.y
+        speed = 6
+        
+        if player_y < screen_height/4 and direction_y < 0:
+            self.shift_y = speed 
+            player.speed = 0
+        elif player_y > screen_height-(screen_height/4) and direction_y > 0:
+            self.shift_y = -speed
+            player.speed = 0
+        else:
+            self.shift_y = 0
+            player.speed = speed
+
     '''
     Collision 
         1) apply vertical movement 
@@ -126,7 +144,7 @@ class Level:
         return False
 
     def update_tile(self, sprites):
-        sprites.update(self.shift_x)
+        sprites.update( self.shift_x, self.shift_y)
         sprites.draw(self.display_surf)
 
     def isEnd(self):
@@ -139,7 +157,7 @@ class Level:
         self.update_tile(self.end)
         self.boost_collide()
         self.scroll_x()
-
+        self.scroll_y()
         player = self.player.sprite 
         if(player.rect.y > screen_height) or self.spike_collide():
             return False
