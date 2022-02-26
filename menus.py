@@ -108,8 +108,12 @@ def level_select(screen):
                     level_1()
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
-                    if(level_1() == "Game Over"):
+                    update_str = level_1()
+                    print(update_str)
+                    if(update_str == "Game Over"):
                         game_over(screen)
+                    elif(update_str == "You Win" ):
+                        winner1(screen)
                 if event.ui_element == level2:
                     pass
             manager.process_events(event)
