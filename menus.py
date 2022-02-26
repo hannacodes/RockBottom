@@ -39,7 +39,7 @@ def game_over(screen):
                     running = False
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
-                    return True
+                    level_1()
                 if event.ui_element == button2:
                     return False
             manager.process_events(event)
@@ -65,10 +65,13 @@ def level_select(screen):
                 sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    running = False
+                    level_select()
+                if event.key == pg.K_SPACE:
+                    level_1()
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
-                    level_1()
+                    if(level_1() == "Game Over"):
+                        game_over(screen)
                 if event.ui_element == level2:
                     pass
             manager.process_events(event)

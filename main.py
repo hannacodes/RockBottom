@@ -1,5 +1,5 @@
 import pygame as pg, sys
-from gameovermenu import game_over
+import pygame_gui as pgui
 from settings import *
 from level import *
 from level_tutorial import *
@@ -19,7 +19,7 @@ def level_1():
                 pg.quit()
                 sys.exit()
             if not game_active: 
-                if ( event.type == pg.KEYDOWN and event.key == pg.K_SPACE ) or game_over_event:
+                if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                     game_active = True
                     level = Level(level_tutorial_map, screen)
             if event.type == pg.KEYDOWN:
@@ -29,7 +29,9 @@ def level_1():
             screen.fill((0,0,0))
             game_active = level.update()
         else:
-            game_over_event = game_over(screen)
+             running = False
+             return "Game Over"
+
         pg.display.update()
         clock.tick(60)
 

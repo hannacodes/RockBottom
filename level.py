@@ -115,13 +115,14 @@ class Level:
         else:
             player.jump_speed = -16
 
+    def update_tile(self, sprites):
+        sprites.update(self.shift_x)
+        sprites.draw(self.display_surf)
+
     def update(self):
-        self.tiles.update(self.shift_x)
-        self.tiles.draw(self.display_surf)
-        self.spikes.update(self.shift_x)
-        self.spikes.draw(self.display_surf)
-        self.boosts.update(self.shift_x)
-        self.boosts.draw(self.display_surf)
+        self.update_tile(self.tiles)
+        self.update_tile(self.spikes)
+        self.update_tile(self.boosts)
         self.boost_collide()
         self.scroll_x()
 
