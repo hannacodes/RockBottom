@@ -11,7 +11,7 @@ level_tutorial_map = [
 '          XXXXXXXXXXXXXXXXXXXXXXXX      XXX             XXXXXXX        ',
 '                                                        XXXXXXXX       ',
 '                                                       BXXXXXXXXX      ',
-'                        XXX     XXX                    XXXXXXXXXXX     ',
+'                        XXX     XXX                      XXXXXXXXX     ',
 '         S    XXXX  XX      XX      XX   XXXXXX          XXXXXXXXXX    ',
 '   P XXXXXXXXXXXXX          XX           XXXXXXXX     B  XXXXXXXXXXX E ',
 ' XXXXXXXXXXXXXXXXX          XX           XXXXXXXX   XXXXXXXXXXXXXXXXXXX',
