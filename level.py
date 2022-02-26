@@ -41,8 +41,6 @@ class Level:
         else:
             self.shift_x = 0
             player.speed = speed
-        
-    
 
 
     def update(self):

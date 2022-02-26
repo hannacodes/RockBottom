@@ -11,6 +11,8 @@ class Player(pg.sprite.Sprite):
         # direction has both x and y
         self.direction = pg.math.Vector2()
         self.speed = 6
+        self.gravity = 0.8
+        self.jump_speed = -16
 
     def key_input(self):
         keys = pg.key.get_pressed()
@@ -20,7 +22,17 @@ class Player(pg.sprite.Sprite):
             self.direction.x = -1
         else:
             self.direction.x = 0
+        if keys[pg.K_SPACE]:
+            self.jump()
     
+    def update_gravity(self):
+        self.direction.y += self.gravity
+        self.rect.y += self.direction.y
+
+    def jump(self):
+        self.direction.y = self.jump_speed 
+
     def update(self):
+        self.update_gravity()
         self.key_input()
         self.rect.x += self.direction.x * self.speed
