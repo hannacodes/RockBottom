@@ -34,6 +34,13 @@
             "regular_path": "fonts/dogica.ttf"
         }
     },
+    "#exit_button":{
+        "font":{
+            "name": "dogica",
+            "size": "20", 
+            "regular_path": "fonts/dogica.ttf"
+        }
+    },
 
     "label":{
         "font":{

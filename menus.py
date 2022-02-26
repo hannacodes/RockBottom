@@ -1,4 +1,5 @@
 import pygame as pg, pygame_gui as pgui, sys
+from pygame_gui.core import ObjectID
 from main import level_1, level_2
 clock = pg.time.Clock()
 pg.init()
@@ -127,12 +128,14 @@ def level_select(screen):
 
 
 def help(screen):
-    manager = pgui.UIManager((screen_height, screen_width))
-    help = "Temporary help method"
+    manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
+    manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
+    manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
+    help = "<font face = dogica color = #FFFFFF size = 3>Temporary help method</font>"
     help_layout_rect = pg.Rect(screen_width/4, screen_height/12, ( screen_width/3 )* 2, screen_height/2)
     help = pgui.elements.UITextBox( help, relative_rect=help_layout_rect, manager=manager )
-    exit_layout_rect = pg.Rect(screen_width/4, screen_height/12 + screen_height/2, screen_width/10, screen_height/12)
-    exit = pgui.elements.UIButton(relative_rect=exit_layout_rect, text='Exit', manager=manager)
+    exit_layout_rect = pg.Rect(screen_width/4, screen_height/12 + screen_height/2 + 10, screen_width/10, screen_height/14)
+    exit = pgui.elements.UIButton(relative_rect=exit_layout_rect, text='Exit', manager=manager, object_id=ObjectID(object_id='#exit_button') )
     running = True
     while running: 
         screen.fill(bg_color)
@@ -155,8 +158,6 @@ def help(screen):
 def main_menu( screen ):
 
     manager = pgui.UIManager((screen_width, screen_height), 'menutheme.json')
-    manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
-    manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
     top = (screen_width/10) * 3
     left = screen_height/5
     width = screen_height/2
