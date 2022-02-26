@@ -25,5 +25,23 @@
     
     "text_box":{
         "normal_bg": "#000000"
+    },
+
+    "button":{
+        "font":{
+            "name": "dogica",
+            "size": "30", 
+            "regular_path": "fonts/dogica.ttf"
+        }
+    },
+
+    "label":{
+        "font":{
+            "name": "dogicapixel",
+            "size": "40", 
+            "bold": 0,
+            "regular_path": "fonts/dogicapixel.ttf",
+            "bold_path": "fonts/dogicapixelbold.ttf"
+        }
     }
 }
