@@ -8,7 +8,7 @@ bg_color = (123, 123, 123)
 screen_width, screen_height = 1200, 900
 
 def winner1(screen):
-    manager = pgui.UIManager((screen_height, screen_width), 'theme.json')
+    manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     top = (screen_width/10) * 3
     left = screen_height/5
     width = screen_height/2
@@ -46,7 +46,7 @@ def winner1(screen):
         clock.tick(60)
 
 def game_over(screen):
-    manager = pgui.UIManager((screen_height, screen_width), 'theme.json')
+    manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     top = (screen_width/10) * 3
     left = screen_height/5
     width = screen_height/2
@@ -84,7 +84,7 @@ def game_over(screen):
         clock.tick(60)
 
 def level_select(screen):
-    manager = pgui.UIManager((screen_height, screen_width), 'theme.json')
+    manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     layout_rect_1 = pg.Rect(screen_width/3 - screen_width/6, screen_height/2 - screen_width/4, screen_width/4, screen_width/4)
     layout_rect_2 = pg.Rect((screen_width/3)*2 - screen_width/6, screen_height/2 - screen_width/4, screen_width/4, screen_width/4)
 
@@ -109,7 +109,6 @@ def level_select(screen):
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
                     update_str = level_1()
-                    print(update_str)
                     if(update_str == "Game Over"):
                         game_over(screen)
                     elif(update_str == "You Win" ):
@@ -148,7 +147,7 @@ def help(screen):
 
 def main_menu( screen ):
 
-    manager = pgui.UIManager((screen_width, screen_height))
+    manager = pgui.UIManager((screen_width, screen_height), 'menutheme.json')
     manager.add_font_paths(font_name = 'dogica', regular_path = '/fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
     manager.add_font_paths(font_name = 'dogicapixel', regular_path = '/fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
     top = (screen_width/10) * 3
