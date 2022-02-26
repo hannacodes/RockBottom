@@ -3,8 +3,8 @@ from settings import *
 
 level_tutorial_map = [
 '                                                                       ',
-'                                                                       ',
-'          TT                 B      B     B     B    B   TT          TT',
+'                                    B                                  ',
+'          TT                 B            B     B    B   TT          TT',
 '          XX                TTT                          XXXX        XX',
 '          XX       TT                                    XX          XX',
 '          XX   T          B     B                        XX        TTXX',
