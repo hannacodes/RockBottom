@@ -30,6 +30,7 @@ def level_1():
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     running = False
+                    return ""
         if win_condition: 
             running = False
             return "You Win"
