@@ -15,6 +15,7 @@ class Level:
         self.tiles = pg.sprite.Group()
         self.player = pg.sprite.GroupSingle()
         self.spikes = pg.sprite.Group()
+        self.boosts = pg.sprite.Group()
 
         for row_index, row in enumerate(level_map):
             for col_index, col in enumerate(row):
@@ -31,6 +32,10 @@ class Level:
                     y += tile_size/2
                     spike = Spike((x,y), tile_size, tile_size/2)
                     self.spikes.add(spike)
+                if col == 'B':
+                    y += tile_size/2
+                    boost = Boost((x,y), tile_size, tile_size/2)
+                    self.boosts.add(boost)
 
     def scroll_x(self):
         player = self.player.sprite
@@ -107,6 +112,8 @@ class Level:
         self.tiles.draw(self.display_surf)
         self.spikes.update(self.shift_x)
         self.spikes.draw(self.display_surf)
+        self.boosts.update(self.shift_x)
+        self.boosts.draw(self.display_surf)
         self.scroll_x()
 
         player = self.player.sprite 
