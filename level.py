@@ -2,6 +2,7 @@ import pygame as pg
 
 from tiles import *
 from settings import *
+from player import *
 
 class Level: 
     def __init__(self, level_map, surf):
@@ -10,6 +11,7 @@ class Level:
         
     def setup_map(self, level_map):
         self.tiles = pg.sprite.Group()
+        self.player = pg.sprite.GroupSingle()
 
         for row_index, row in enumerate(level_map):
             for col_index, col in enumerate(row):
@@ -18,6 +20,14 @@ class Level:
                 if col == 'X':
                     tile = Tile((x, y), tile_size)
                     self.tiles.add(tile)
+                if col == 'P':
+                    y += tile_size/2
+                    rock = Player((x,y))
+                    self.player.add(rock)
+
+
 
     def run(self):
         self.tiles.draw(self.display_surf)
+
+        self.player.draw(self.display_surf)
