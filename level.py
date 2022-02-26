@@ -133,10 +133,10 @@ class Level:
     def boost_collide(self):
         player = self.player.sprite 
         if pg.sprite.spritecollideany(player, self.boosts):
-            player.jump_speed = -20
+            player.jump_speed = -18
             player.jump()
         else:
-            player.jump_speed = -16
+            player.jump_speed = -14
 
     def end_collide(self):
         player = self.player.sprite
