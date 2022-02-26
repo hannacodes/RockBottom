@@ -10,3 +10,12 @@ class Tile(pg.sprite.Sprite):
     #for scrolling
     def update(self, shift_x):
         self.rect.x += shift_x
+
+class Spike(pg.sprite.Sprite):
+    def __init__(self, pos, width, height):
+        super().__init__()
+        self.image = pg.Surface((width, height))
+        self.image.fill((255,120,120))
+        self.rect = self.image.get_rect(topleft = pos)
+    def update(self, shift_x):
+        self.rect.x += shift_x

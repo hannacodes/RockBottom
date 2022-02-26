@@ -14,6 +14,7 @@ class Level:
     def setup_map(self, level_map):
         self.tiles = pg.sprite.Group()
         self.player = pg.sprite.GroupSingle()
+        self.spikes = pg.sprite.Group()
 
         for row_index, row in enumerate(level_map):
             for col_index, col in enumerate(row):
@@ -26,6 +27,10 @@ class Level:
                     y += tile_size/2
                     rock = Player((x,y))
                     self.player.add(rock)
+                if col == 'S':
+                    y += tile_size/2
+                    spike = Spike((x,y), tile_size, tile_size/2)
+                    self.spikes.add(spike)
 
     def scroll_x(self):
         player = self.player.sprite
@@ -91,13 +96,21 @@ class Level:
         if player.on_right and (player.rect.right > self.curr_x or player.direction.x <= 0):
             player.on_right = False
 
+    def spike_collide(self):
+        player = self.player.sprite
+        if pg.sprite.spritecollideany(player, self.spikes):
+            return True
+        return False
+
     def update(self):
         self.tiles.update(self.shift_x)
         self.tiles.draw(self.display_surf)
+        self.spikes.update(self.shift_x)
+        self.spikes.draw(self.display_surf)
         self.scroll_x()
 
         player = self.player.sprite 
-        if(player.rect.y > screen_height):
+        if(player.rect.y > screen_height) or self.spike_collide():
             return False
 
         self.player.update()
