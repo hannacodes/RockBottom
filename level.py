@@ -96,7 +96,12 @@ class Level:
         self.tiles.draw(self.display_surf)
         self.scroll_x()
 
+        player = self.player.sprite 
+        if(player.rect.y > screen_height):
+            return False
+
         self.player.update()
         self.vertical_collision()
         self.horizontal_collision()
         self.player.draw(self.display_surf)
+        return True
