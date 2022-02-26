@@ -69,6 +69,12 @@ class Level:
         if player_y < screen_height/4 and direction_y < 0:
             self.shift_y = speed 
             player.speed = 0
+        if player_y < 0 and direction_y > 0:
+            self.shift_y = -speed
+            player.speed = 0
+        else:
+            self.shift_y = 0
+            player.speed = speed
 
     '''
     Collision 
