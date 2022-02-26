@@ -13,8 +13,8 @@ def main_menu( screen ):
     
     top = (screen_width/10) * 3
     left = screen_height/12
-    width = screen_height/6
-    height = screen_height/12
+    width = screen_height/2
+    height = screen_height/7
 
     t_layout_rect = pg.Rect(top, left, width, height)
     title = pgui.elements.UITextBox("Rock Bottom", relative_rect=t_layout_rect,
