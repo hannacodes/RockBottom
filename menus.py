@@ -154,16 +154,16 @@ def help(screen):
 def main_menu( screen ):
 
     manager = pgui.UIManager((screen_width, screen_height), 'menutheme.json')
-    manager.add_font_paths(font_name = 'dogica', regular_path = '/fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
-    manager.add_font_paths(font_name = 'dogicapixel', regular_path = '/fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
+    manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
+    manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
     top = (screen_width/10) * 3
     left = screen_height/5
     width = screen_height/2
     height = screen_height/7
 
     t_layout_rect = pg.Rect(top, left, width, height)
-    title = pgui.elements.UITextBox( "<font face = 'verdana' color = '#ffffff' size = 7 >Rock Bottom</font>",
-                                    relative_rect=t_layout_rect,
+    title = pgui.elements.UILabel( relative_rect=t_layout_rect, 
+                                    text = 'Rock Bottom',
                                     manager=manager )
     
     b1_layout_rect = pg.Rect(top, left+height+20, width, height)
@@ -185,14 +185,16 @@ def main_menu( screen ):
                 sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    running = False
+                    pg.quit()
+                    sys.exit()
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
                     level_select(screen)
                 if event.ui_element == button2:
                     help(screen)
                 if event.ui_element == button3:
-                    running = False
+                    pg.quit()
+                    sys.exit()
 
             manager.process_events(event)
         
