@@ -33,6 +33,4 @@ class Player(pg.sprite.Sprite):
         self.direction.y = self.jump_speed 
 
     def update(self):
-        self.update_gravity()
         self.key_input()
-        self.rect.x += self.direction.x * self.speed

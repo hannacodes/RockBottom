@@ -9,6 +9,7 @@ class Level:
         self.display_surf = surf
         self.setup_map(level_map)
         self.shift_x = 0
+        self.curr_x = 0
         
     def setup_map(self, level_map):
         self.tiles = pg.sprite.Group()
@@ -41,7 +42,40 @@ class Level:
         else:
             self.shift_x = 0
             player.speed = speed
+    
+    '''
+    Collision 
+        1) apply vertical movement 
+        2) check vertical collision 
+        3) apply horizontal movement
+        4) check horizontal collision 
+    '''
+    def vertical_collision(self):
+        player = self.player.sprite
+        player.update_gravity()
+        for sprite in self.tiles.sprites():
+            if sprite.rect.colliderect(player.rect):
+                if player.direction.y > 0:
+                    player.rect.bottom = sprite.rect.top
+                    player.direction.y = 0
+                elif player.direction.y < 0:
+                    player.rect.top = sprite.rect.bottom 
+                    player.direction.y = 0
 
+
+    def horizontal_collision(self):
+        player = self.player.sprite 
+        # apply horizontal movement
+        player.rect.x += player.direction.x * player.speed 
+        for sprite in self.tiles.sprites():
+            # check horizontal collision
+            if sprite.rect.colliderect(player.rect):
+                if player.direction.x < 0:
+                    player.rect.left = sprite.rect.right
+                    self.curr_x = player.rect.left
+                elif player.direction.x > 0: 
+                    player.rect.right = sprite.rect.left
+                    self.curr_x = player.rect.right
 
     def update(self):
         self.tiles.update(self.shift_x)
@@ -49,4 +83,6 @@ class Level:
         self.scroll_x()
 
         self.player.update()
+        self.vertical_collision()
+        self.horizontal_collision()
         self.player.draw(self.display_surf)
