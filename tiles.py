@@ -1,11 +1,13 @@
 import pygame as pg
 
 class Tile(pg.sprite.Sprite):
-    def __init__(self, pos, size):
+    def __init__(self, pos, col, size):
         super().__init__()
-        # creating surface with size by size
-        self.image = pg.Surface((size, size))
-        self.image.fill((120,120,120)) #gray tiles
+        if col == 'T':
+            self.image = pg.image.load("art_assets/forest-level/tile/forest-tile-middle.png").convert_alpha()
+        elif col == 'X':
+            self.image = pg.image.load("art_assets/forest-level/tile/forest-tiles-dirt.png").convert_alpha()
+        self.image = pg.transform.rotozoom(self.image, 0, (size/28))
         self.rect = self.image.get_rect(topleft = pos)
     #for scrolling
     def update(self, shift_x, shift_y):

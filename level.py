@@ -24,8 +24,8 @@ class Level:
             for col_index, col in enumerate(row):
                 x = col_index * tile_size
                 y = row_index * tile_size
-                if col == 'X':
-                    tile = Tile((x, y), tile_size)
+                if col == 'X' or col == 'T':
+                    tile = Tile((x, y), col, tile_size)
                     self.tiles.add(tile)
                 if col == 'P':
                     y += tile_size/2
@@ -132,7 +132,7 @@ class Level:
     def boost_collide(self):
         player = self.player.sprite 
         if pg.sprite.spritecollideany(player, self.boosts):
-            player.jump_speed = -25
+            player.jump_speed = -20
             player.jump()
         else:
             player.jump_speed = -16
