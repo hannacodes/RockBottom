@@ -11,7 +11,7 @@ def level_1(screen):
     pg.init()
     
     level = Level(level_tutorial_map, screen, 1)
-
+    #forest background for tutorial level
     forest_surf = pg.image.load("art_assets/forest-level/forest-level-background-altered1.png").convert_alpha()
 
     game_active = True
@@ -22,16 +22,19 @@ def level_1(screen):
             if event.type == pg.QUIT:
                 pg.quit()
                 sys.exit()
+            #what to do when game over (game_active is not True)
             if not game_active: 
                 if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                     game_active = True
                     level = Level(level_tutorial_map, screen, 1)
                     game_active = level.update()
                     win_condition = level.end_collide()
+            #can escape using escape key
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     running = False
                     return ""
+        #win condition when end flag is reached 
         if win_condition: 
             running = False
             return "You Win"
@@ -48,7 +51,7 @@ def level_1(screen):
 def level_2(screen):
     
     level = Level(level_city_map, screen, 2)
-
+    #city level background
     city_surf = pg.image.load("art_assets/city-level/city-level-background.png").convert_alpha()
     city_surf = pg.transform.rotozoom(city_surf, 0, 3.5)
 

@@ -1,13 +1,18 @@
 # RockBottom
-WiCHacks 2022 Project - a platformer game that is centered around the story of a pet rock
+Created by Hanna Koh, Lucy Hu, Esther Loo, and Alyssa Sfravara for WiCHacks 2022 
+
+Rock Bottom is a platformer game that is centered around the story of a pet rock
+
+## Story
+This game tells the story of a pet rock who has been accidentally dropped down a drain. Join it on its way back to its home!
 
 ## Description
-This is a 2D platformer game that we created with Pygame and Pygame_Gui.
+This is a 2D platformer game that we created with Python, and Python APIs: Pygame, Pygame_Gui, and OpenCV
 
 --- 
 
 ## Want to try it out?
-Install these three api's by typing into terminal/command prompt: 
+Install these three apis by typing into terminal/command prompt: 
 ```
 $ pip install pygame
 ```
@@ -48,6 +53,8 @@ This two-level platformer game is exactly that. The player plays as our main cha
 
 ## How we built it
 We built this entirely in python, using the python games api: pygame.
+We used the gui framework made for pygame, called pygame_gui, to help us create interactive, responsive buttons that allowed for a simple, but efficent GUI. 
+Finally, we used the movie, or video framework, OpenCV, to help us implement an animated cutscene. 
 
 --- 
 
@@ -60,6 +67,9 @@ We built this entirely in python, using the python games api: pygame.
       - many edge cases (ex: corners)
     - Camera Scrolling 
       - vertical camera scrolling dealt w/ gravity, acceleration, velocity 
+- Limited knowledge of APIs
+  - While we have coded in python before, this was our first time using the pygames API. 
+  - We wanted a more responsive GUI, so we had to find pygames_gui, and then learn to use it
 
 --- 
 
@@ -90,7 +100,7 @@ We learned about python, using APIs, and we learned a lot about game design.
 - pygame 
   - using its built in functions to display and make a game
 - Game Design
-  - how to make fun levels and assets 
+  - how to make fun levels and relevant, thematic assets 
 
 --- 
 
