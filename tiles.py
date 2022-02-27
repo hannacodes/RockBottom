@@ -26,6 +26,18 @@ class Tile(pg.sprite.Sprite):
         self.rect.x += shift_x
         self.rect.y += shift_y
 
+class Moving_Plat(pg.sprite.Sprite):
+    def __init__(self, pos, size, lvl):
+        super().__init__()
+        if lvl == 1:
+            self.image = pg.image.load("art_assets/forest-level/platform/forest-platforms-middle.png").convert_alpha()
+            self.image = pg.transform.rotozoom(self.image, 0, (size/28))
+        self.rect = self.image.get_rect(topleft = pos)
+    def update(self, shift_x, shift_y):
+        self.rect.x += shift_x
+        self.rect.y += shift_y
+    
+
 class Spike(pg.sprite.Sprite):
     def __init__(self, pos, col, lvl):
         super().__init__()

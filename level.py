@@ -22,6 +22,7 @@ class Level:
         self.spikes = pg.sprite.Group()
         self.boosts = pg.sprite.Group()
         self.end = pg.sprite.GroupSingle()
+        self.moving_plats = pg.sprite.Group()
 
         for row_index, row in enumerate(level_map):
             for col_index, col in enumerate(row):
@@ -45,6 +46,10 @@ class Level:
                 if col == 'E':
                     end = End((x,y))
                     self.end.add(end)
+                if col == 'M':
+                    moving_plat = Moving_Plat((x,y), tile_size, self.lvl)
+                    self.moving_plats.add(moving_plat)
+
 
     def tutorial_text(self):
         self.texts = pg.sprite.Group()
@@ -175,6 +180,7 @@ class Level:
         self.update_tile(self.spikes)
         self.update_tile(self.boosts)
         self.update_tile(self.end)
+        self.update_tile(self.moving_plats)
         self.boost_collide()
         self.scroll_x()
         self.scroll_y()
