@@ -67,6 +67,9 @@ Finally, we used the movie, or video framework, OpenCV, to help us implement an 
       - many edge cases (ex: corners)
     - Camera Scrolling 
       - vertical camera scrolling dealt w/ gravity, acceleration, velocity 
+- Limited knowledge of APIs
+  - While we have coded in python before, this was our first time using the pygames API. 
+  - We wanted a more responsive GUI, so we had to find pygames_gui, and then learn to use it
 
 --- 
 
