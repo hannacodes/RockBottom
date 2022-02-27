@@ -209,7 +209,7 @@ def help(screen):
     help += "Use the left and right arrow keys to move left <br>and right<br><br>"
     help += "Use the spacebar to jump.<br><br>"
     help += "Watch out for poison, rats, and drones as well <br>as high drops!<br><br>"
-    help += "Shop awning or mushrooms you find along your way <br>can be "
+    help += "Shop awnings or mushrooms you find along your way <br>can be "
     help += "helpful for getting <br>to higher places.</font>"
     help_layout_rect = pg.Rect(screen_width/4, screen_height/12, ( screen_width/3 )* 2, screen_height/2)
     help = pgui.elements.UITextBox( help, relative_rect=help_layout_rect, manager=manager )
