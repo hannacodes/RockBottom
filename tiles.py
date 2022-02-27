@@ -17,6 +17,18 @@ class Tile(pg.sprite.Sprite):
                 self.image = pg.transform.rotozoom(self.image, 0, (size/28))
             elif col == 'O':
                 self.image = pg.image.load("art_assets/forest-level/tile/pipe-tile-continued.png").convert_alpha()
+            elif col == 'L':
+                self.image = pg.image.load("art_assets/forest-level/tile/forest-tiles-left-sharp.png").convert_alpha()
+                self.image = pg.transform.rotozoom(self.image, 0, (size/28))
+            elif col == 'K':
+                self.image = pg.image.load("art_assets/forest-level/tile/forest-tiles-right-sharp.png").convert_alpha()
+                self.image = pg.transform.rotozoom(self.image, 0, (size/28))
+            elif col == 'N':
+                self.image = pg.image.load("art_assets/forest-level/platform/forest-platforms-left.png").convert_alpha()
+                self.image = pg.transform.rotozoom(self.image, 0, (size/28))
+            elif col == 'M':
+                self.image = pg.image.load("art_assets/forest-level/platform/forest-platforms-right.png").convert_alpha()
+                self.image = pg.transform.rotozoom(self.image, 0, (size/28))
         if lvl == 2:
             if col == 'X':
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-middle.png").convert_alpha()

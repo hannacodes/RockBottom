@@ -1,19 +1,24 @@
 level_tutorial_map = [ 
 '                                           BBB                                            ',
-'                                      BBB  FFF  B                                         ',
-'                                      FFF       F  BB  BB   TTT                           ',
-'                                  B                FF  FF   XXX  FF                       ',
-'                                  F                         XXX     FF                    ',
-'                               B                            XXX         FF                ',
-'                            TTTTTTTTTSTTT   BB              XXX             FF            ',
-'                            XXXXXXXXXXXXX   FF  BB          XXX                FF    EOOOO',
-'                                                FF          XXX                    TTTTTTT',
+'                                      BBB  NFM  B                                         ',
+'                                      NFM       F  BB  BB   LTK                           ',
+'                                  B                NM  NM   XXX  NM                       ',
+'                                  F                         XXX     NM                    ',
+'                               B                            XXX         NM                ',
+'                            LTTTTTTTKSLTK   BB              XXX             NM            ',
+'                            XXXXXXXXXXXXX   NM  BB          XXX                NM    EOOOO',
+'                                                NM          XXX                    LTTTTTT',
 '                                                    B       XXX                    XXXXXXX',
-'                             FFF      FFF           F       XXX                    XXXXXXX',
-'                    TTT  FF       TT       FF   TTT    B    XXX                    XXXXXXX',
-'   P        TTTTSTTTXXX           XX            XXXTTTTTTTTTXXX                    XXXXXXX',
-'TTTTTTTTTTTTXXXXXXXXXXXSSSSSSSSSSSXXSSSSSSSSSSSSXXXXXXXXXXXXXXXSSSSSSSSSSSSSSSSSSSSXXXXXXX',
+'                             NFM      NFM           F       XXX                    XXXXXXX',
+'                    LTK  NM       LK       NM   LTK    B    XXX                    XXXXXXX',
+'   P        LTTKSLTTXXX           XX            XXXTTTTTTTTTXXX                    XXXXXXX',
+'LTTTTTTTTTTTXXXXXXXXXXXSSSSSSSSSSSXXSSSSSSSSSSSSXXXXXXXXXXXXXXXSSSSSSSSSSSSSSSSSSSSXXXXXXX',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 ]
+
+#L left tile edge
+#K right tile edge
+#N left plat edge
+#M right tile edge
