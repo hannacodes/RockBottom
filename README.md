@@ -28,9 +28,13 @@ We built this entirely in python, using the python games api: pygame.
 
 ## Challenges we ran into
 - Game Physics
-- Collision (Many, many bugs...)
-- Camera Scrolling 
-- Moving Platforms
+  - our limited physics knowledge resulted in problems with:
+    - Collision
+      - in pygame: can easily tell if it collided but not where exactly 
+      - had to figure out vertical & horizontal movement and collision 
+      - many edge cases (ex: corners)
+    - Camera Scrolling 
+      - vertical camera scrolling dealt w/ gravity, acceleration, velocity 
 
 --- 
 
@@ -47,6 +51,7 @@ We learned about python, using APIs, and we learned a lot about game design.
 ## What's next for Rock Bottom
 We actually drafted two additional levels, that we hope to implement in the future. 
 - Additional Levels
+- Moving Platforms
 - Collectibles
 - Lives/Checkpoints
 
