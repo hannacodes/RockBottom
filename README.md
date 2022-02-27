@@ -40,6 +40,20 @@ We built this entirely in python, using the python games api: pygame.
 
 ## Accomplishments that we're proud of
 We're proud of being able to complete a whole game in just 24 hours!
+- Playable Game
+  - loading map levels
+  - event handlers 
+  - moving, jumping 
+  - basic collision detection
+  - different types of platforms
+- Player animation 
+  - rock rolling 
+  - rock standing  
+- Sprites 
+  - art for game assets
+- Game states
+  - linking menu with game
+    - game over, help, credits, main menu, win
 
 --- 
 
