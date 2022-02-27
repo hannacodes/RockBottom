@@ -1,4 +1,6 @@
 import pygame as pg
+from player import *
+from level import *
 
 class Tile(pg.sprite.Sprite):
     def __init__(self, pos, col, size, lvl):

@@ -165,6 +165,17 @@ class Level:
             return True
         return False
 
+    def moving_plat_collide(self, Tile):
+        plat_vel = 5
+        player = self.player.sprite
+        if pg.sprite.spritecollideany(player, Moving_Plat):
+            player.bottom = self.rect.top
+            player.left += plat_vel
+        player.top += 0.8
+        self.rect.left += plat_vel
+
+
+
     def update_tile(self, sprites):
         sprites.update( self.shift_x, self.shift_y)
         sprites.draw(self.display_surf)
