@@ -1,5 +1,5 @@
 # RockBottom
-Createed by Hanna Koh, Lucy Hu, Esther Loo, and Alyssa Sfravara for WiCHacks 2022 
+Created by Hanna Koh, Lucy Hu, Esther Loo, and Alyssa Sfravara for WiCHacks 2022 
 
 Rock Bottom is a platformer game that is centered around the story of a pet rock
 
