@@ -2,6 +2,7 @@ import pygame as pg, sys
 from settings import *
 from level import *
 from level_tutorial import *
+from tutorial_text import *
 
 def level_1():
     pg.init()

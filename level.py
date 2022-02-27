@@ -3,7 +3,7 @@ import pygame as pg
 from tiles import *
 from settings import *
 from player import *
-
+from tutorial_text import *
 class Level: 
     def __init__(self, level_map, surf, lvl):
         self.display_surf = surf
@@ -13,6 +13,8 @@ class Level:
         self.curr_x = 0
 
         self.shift_y = 0
+        if self.lvl == 1:
+            self.tutorial_text()
         
     def setup_map(self, level_map):
         self.tiles = pg.sprite.Group()
@@ -43,6 +45,11 @@ class Level:
                 if col == 'E':
                     end = End((x,y))
                     self.end.add(end)
+
+    def tutorial_text(self):
+        self.texts = pg.sprite.Group()
+        text = Text(0, (2 * tile_size, 8 * tile_size))
+        self.texts.add(text)
 
     def scroll_x(self):
         player = self.player.sprite
@@ -152,6 +159,9 @@ class Level:
         return self.end_collide()
 
     def update(self):
+        if self.lvl == 1:
+            self.update_tile(self.texts)
+
         self.update_tile(self.tiles)
         self.update_tile(self.spikes)
         self.update_tile(self.boosts)
