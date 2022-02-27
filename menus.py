@@ -1,7 +1,7 @@
 import pygame as pg, pygame_gui as pgui, sys
 import cv2 
 from pygame_gui.core import ObjectID
-from main import level_1, level_2
+from levelloop import level_1, level_2
 from settings import tile_size
 clock = pg.time.Clock()
 pg.init()
@@ -11,6 +11,7 @@ bg_color = (130, 95, 118)
 #screen_width, screen_height = info.current_w, info.current_h
 screen_width, screen_height = 1200, 900
 
+#this is the You Win! menu
 def winner1(screen, curr_level):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     top = (screen_width/10) * 3
@@ -79,6 +80,7 @@ def winner1(screen, curr_level):
             manager.process_events(event)
         clock.tick(60)
 
+#This is the You Die! menu
 def game_over(screen, curr_level):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     top = (screen_width/10) * 3
@@ -95,10 +97,13 @@ def game_over(screen, curr_level):
     button1 = pgui.elements.UIButton(relative_rect=b1_layout_rect, text='Try Again', manager=manager)
     b2_layout_rect = pg.Rect(top, left+height*2+20, width, height)
     button2 = pgui.elements.UIButton(relative_rect=b2_layout_rect, text='Exit', manager=manager)
+    rock = pg.image.load('art_assets/blooper-rock.png')
+    rock = pg.transform.rotozoom(rock, 0, 0.2)
 
     running = True 
     while running: 
         screen.fill(bg_color)
+        screen.blit(rock, (top + top/2, left-tile_size))
         manager.update(60/1000.0)
         manager.draw_ui(screen)
         pg.display.update()
@@ -127,6 +132,7 @@ def game_over(screen, curr_level):
             manager.process_events(event)
         clock.tick(60)
 
+#This is the function that plays the cutscene to the game screen 
 def play_cutscene(screen, filepath):
     video = cv2.VideoCapture(filepath)
     success, video_image = video.read()
@@ -150,7 +156,7 @@ def play_cutscene(screen, filepath):
         screen.blit(video_surf, (0, 0))
         pg.display.flip()
 
-
+#This is the level selection screen
 def level_select(screen):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     layout_rect_1 = pg.Rect(screen_width/11 * 4 - screen_width/6, screen_height/6 * 3.9 - screen_width/4, screen_width/4, screen_width/4)
@@ -193,7 +199,7 @@ def level_select(screen):
             manager.process_events(event)
         clock.tick(60)
 
-
+#This displays the help menu
 def help(screen):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
@@ -228,6 +234,7 @@ def help(screen):
             
             manager.process_events(event)
 
+#this displays the credits of the game
 def roll_credits( screen ):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
@@ -266,6 +273,7 @@ def roll_credits( screen ):
             
             manager.process_events(event)
 
+#This is the main-loop, and also has the role of displaying the main menu
 def main_menu():
     pg.display.set_caption('Rock Bottom')
     screen = pg.display.set_mode((screen_width, screen_height))

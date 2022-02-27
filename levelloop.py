@@ -84,7 +84,3 @@ def level_2(screen):
              return "Game Over"
         pg.display.update()
         clock.tick(60)
-
-if __name__ == '__main__':
-    screen = pg.display.set_mode((screen_width, screen_height))
-    level_2(screen)
