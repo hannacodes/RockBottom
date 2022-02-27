@@ -175,7 +175,7 @@ def level_select(screen):
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
                     curr_level = 1
-                    play_cutscene(screen, 'countdown-temp-video.mp4')
+                    play_cutscene(screen, 'art_assets/beginning-scene.mp4')
                     update_str = level_1(screen)
                     if(update_str == "Game Over"):
                         game_over(screen, curr_level)
