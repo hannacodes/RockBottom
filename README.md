@@ -3,6 +3,9 @@ Createed by Hanna Koh, Lucy Hu, Esther Loo, and Alyssa Sfravara for WiCHacks 202
 
 Rock Bottom is a platformer game that is centered around the story of a pet rock
 
+## Story
+This game tells the story of a pet rock who has been accidentally dropped down a drain. Join it on its way back to its home!
+
 ## Description
 This is a 2D platformer game that we created with Pygame and Pygame_Gui.
 
