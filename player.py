@@ -1,6 +1,5 @@
 import pygame as pg 
 from settings import *
-from rock_rolling_animation import import_folder
 
 class Player(pg.sprite.Sprite):
     def __init__(self, pos):
