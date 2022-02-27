@@ -29,6 +29,9 @@ def winner1(screen, curr_level):
     b3_layout_rect = pg.Rect(top, left+height*3+20, width, height)
     button3 = pgui.elements.UIButton(relative_rect=b3_layout_rect, text='Exit', manager=manager)
     running = True 
+    if curr_level == 2:
+        button1.set_text("Credits")
+
     while running: 
         screen.fill(bg_color)
         manager.update(60/1000.0)
@@ -50,8 +53,12 @@ def winner1(screen, curr_level):
                         game_over(screen, curr_level)
                     if(update_str == "You Win" and curr_level == 1):
                         winner1(screen, curr_level)
-
                     running = False
+
+                if event.ui_element == button1 and curr_level == 2:
+                    roll_credits(screen)
+                    running = False
+
                 if event.ui_element == button2: 
                     curr_level += 1
                     if curr_level == 1 :
@@ -164,8 +171,13 @@ def help(screen):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
     manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
-    help = "<font face = dogica color = #FFFFFF size = 3>"
-    help += "</font>"
+    help = "<font face = dogica color = #FFFFFF size = 6>Commands<br><br></font>"
+    help += "<font face = dogica color = #FFFFFF size = 3>"
+    help += "Use the left and right arrow keys to move left <br>and right<br><br>"
+    help += "Use the spacebar to jump.<br><br>"
+    help += "Watch out for poison, rats, and drones as well <br>as high drops!<br><br>"
+    help += "Shop awning or mushrooms you find along your way <br>can be "
+    help += "helpful for getting <br>to higher places.</font>"
     help_layout_rect = pg.Rect(screen_width/4, screen_height/12, ( screen_width/3 )* 2, screen_height/2)
     help = pgui.elements.UITextBox( help, relative_rect=help_layout_rect, manager=manager )
     exit_layout_rect = pg.Rect(screen_width/4, screen_height/12 + screen_height/2 + 10, screen_width/10, screen_height/14)
@@ -193,7 +205,7 @@ def roll_credits( screen ):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
     manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
-    credits = "<font face = dogica color = #FFFFFF size = 6>Credit Reel<br>"
+    credits = "<font face = dogica color = #FFFFFF size = 6>Credit Reel<br></font>"
     credits += "<font face = dogica color = #FFFFFF size = 3><p>Created by: Hanna Koh, Lucy Hu, Esther Loo, <br>and Alyssa Sfravara <br><br>"
     credits += "All art by Esther Loo<br><br>"
     credits += "Fonts used: <a href =https://www.dafont.com/dogica.font?fpp=200&psize=l>Dogica</a><br><br>" 
