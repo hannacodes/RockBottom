@@ -8,9 +8,15 @@ This is a 2D platformer game that we created with Pygame and Pygame_Gui.
 
 ## Want to try it out?
 Install these three api's: 
-```$ pip install pygame```
-```$ pip install pygame_gui```
-```$ pip install opencv-python```
+```
+$ pip install pygame
+```
+```
+$ pip install pygame_gui
+```
+```
+$ pip install opencv-python
+```
 
 ---
 
