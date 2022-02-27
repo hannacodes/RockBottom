@@ -40,7 +40,7 @@ class Boost(pg.sprite.Sprite):
 class End(pg.sprite.Sprite):
     def __init__(self, pos):
         super().__init__()
-        self.image = pg.image.load("art_assets/end-flag.png").convert_alpha()
+        self.image = pg.image.load("art_assets/end-flag-improved.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
         self.rect.x += shift_x
