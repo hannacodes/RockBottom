@@ -29,6 +29,9 @@ class Tile(pg.sprite.Sprite):
             elif col == 'M':
                 self.image = pg.image.load("art_assets/forest-level/platform/forest-platforms-right.png").convert_alpha()
                 self.image = pg.transform.rotozoom(self.image, 0, (size/28))
+            elif col == 'V':
+                self.image = pg.image.load("art_assets/forest-level/platform/forest-single-platform.png").convert_alpha()
+                self.image = pg.transform.rotozoom(self.image, 0, (size/28))
         if lvl == 2:
             if col == 'X':
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-middle.png").convert_alpha()
@@ -39,6 +42,10 @@ class Tile(pg.sprite.Sprite):
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tiles-around-shans-door.png").convert_alpha()
             if col == 'T':
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-middle-window.png").convert_alpha()
+            elif col == 'L':
+                self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-left.png").convert_alpha()
+            elif col == 'K':
+                self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-right.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     #for scrolling
     def update(self, shift_x, shift_y):
