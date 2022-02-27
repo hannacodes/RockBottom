@@ -12,7 +12,7 @@ level_city_map =[
 '                                                          F    XXXXXXX       B    XX   BB  BBXXXXX',
 '                                                      FF       XXXXXXX            XX   FFFFFFXXXXX',
 '                                             FFFF         F    XXXXXXX            XX         XXXXX',
-' P               C  FF           F         R      R            XXXXXXX         BB XXB    BBBBXXXXX',
+' P     RR    R   C  FF           F         R      R            XXXXXXX         BB XXB    BBBBXXXXX',
 'XXXXXXXXXXXXXXXXXX          FF          XXXXXXXXXXXXXX  BBB    XXXXXXX            XXFFF  FFFFFFOOO',
 'XXXXXXXXXXXXXXXXXX      F          BB   XXXXXXXXXXXXXX         XXXXXXX     BB     XX            EO',
 'XXXXXXXXXXXXXXXXXX                      XXXXXXXXXXXXXX         XXXXXXX            XXXXXXXXXXXXXOOO',

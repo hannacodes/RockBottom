@@ -57,7 +57,7 @@ class Level:
         self.texts.add(text2)
         text3 = Text(3, (53 * tile_size, 7 * tile_size))
         self.texts.add(text3)
-        text4 = Text(4, (82.3 * tile_size, 5 * tile_size))
+        text4 = Text(4, (82.6 * tile_size, 5 * tile_size))
         self.texts.add(text4)
 
 
