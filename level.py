@@ -22,6 +22,8 @@ class Level:
         self.boosts = pg.sprite.Group()
         self.end = pg.sprite.GroupSingle()
 
+        #defines each variable letter on the created level map
+
         for row_index, row in enumerate(level_map):
             for col_index, col in enumerate(row):
                 x = col_index * tile_size
@@ -45,6 +47,7 @@ class Level:
                     end = End((x,y), self.lvl)
                     self.end.add(end)
 
+    #displays text on the level screen
 
     def add_text(self, lvl):
         self.texts = pg.sprite.Group()
@@ -63,6 +66,7 @@ class Level:
             text5 = Text(5, (73.5 * tile_size, 10 * tile_size))
             self.texts.add(text5)
 
+    #sets scroll on screen for x direction based on player position
 
     def scroll_x(self):
         player = self.player.sprite
@@ -80,6 +84,8 @@ class Level:
             self.shift_x = 0
             player.speed.x = speed
     
+    #sets scroll on screen for y direction based on player position
+
     def scroll_y(self):
         player = self.player.sprite
         player_y = player.rect.centery
