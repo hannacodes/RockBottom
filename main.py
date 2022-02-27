@@ -45,11 +45,8 @@ def level_1():
         pg.display.update()
         clock.tick(60)
 
-def level_2():
-    pg.init()
-
-    screen = pg.display.set_mode((screen_width, screen_height))
-    clock = pg.time.Clock()
+def level_2(screen):
+    print("level 2 called")
     level = Level(level_city_map, screen, 1)
 
     forest_surf = pg.image.load("art_assets/forest-level/forest-level-background-altered1.png").convert_alpha()

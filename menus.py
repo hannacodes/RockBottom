@@ -133,7 +133,8 @@ def level_select(screen):
                     if(update_str == "You Win" ):
                         winner1(screen)
                 if event.ui_element == level2:
-                    pass
+                    print("button clicked")
+                    update_str = level_2(screen)
             manager.process_events(event)
         clock.tick(60)
 
