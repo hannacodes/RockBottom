@@ -5,11 +5,11 @@ from level_tutorial import *
 from tutorial_text import *
 from level_city import *
 
-def level_1():
-    pg.init()
+clock = pg.time.Clock()
 
-    screen = pg.display.set_mode((screen_width, screen_height))
-    clock = pg.time.Clock()
+def level_1(screen):
+    pg.init()
+    
     level = Level(level_tutorial_map, screen, 1)
 
     forest_surf = pg.image.load("art_assets/forest-level/forest-level-background-altered1.png").convert_alpha()
