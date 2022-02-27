@@ -5,11 +5,11 @@ from main import level_1, level_2
 from settings import tile_size
 clock = pg.time.Clock()
 pg.init()
-
+info = pg.display.Info()
 bg_color = (130, 95, 118)
 
+#screen_width, screen_height = info.current_w, info.current_h
 screen_width, screen_height = 1200, 900
-
 
 def winner1(screen, curr_level):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
@@ -157,7 +157,8 @@ def help(screen):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
     manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
-    help = "<font face = dogica color = #FFFFFF size = 3>Temporary help method</font>"
+    help = "<font face = dogica color = #FFFFFF size = 3>"
+    help += "</font>"
     help_layout_rect = pg.Rect(screen_width/4, screen_height/12, ( screen_width/3 )* 2, screen_height/2)
     help = pgui.elements.UITextBox( help, relative_rect=help_layout_rect, manager=manager )
     exit_layout_rect = pg.Rect(screen_width/4, screen_height/12 + screen_height/2 + 10, screen_width/10, screen_height/14)
