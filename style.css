@@ -21,10 +21,11 @@
     padding:0;
     margin-left: 5vw;
     margin-right: 5vw;
+    color: #281a36;
   }
 
   body{ 
-    background-color: #281a36;
+    background-color: #ebe3ff;
   }
 
   p{
@@ -55,5 +56,9 @@
       margin:auto;
       text-align: center;
       border-radius:15px;
+      border: none;
+      background-color: rgb(130, 95, 118);
+      color:#ffe0e1;
+
   }
 
