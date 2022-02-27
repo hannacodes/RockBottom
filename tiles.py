@@ -15,8 +15,6 @@ class Tile(pg.sprite.Sprite):
             elif col == 'F':
                 self.image = pg.image.load("art_assets/forest-level/platform/forest-platforms-middle.png").convert_alpha()
                 self.image = pg.transform.rotozoom(self.image, 0, (size/28))
-            elif col == 'I':
-                self.image = pg.image.load("art_assets/forest-level/tile/pipe-entrance.png").convert_alpha()
             elif col == 'O':
                 self.image = pg.image.load("art_assets/forest-level/tile/pipe-tile-continued.png").convert_alpha()
         if lvl == 2:
@@ -76,7 +74,7 @@ class End(pg.sprite.Sprite):
     def __init__(self, pos, lvl):
         super().__init__()
         if lvl == 1:
-            self.image = pg.image.load("art_assets/end-flag-improved.png").convert_alpha()
+            self.image = pg.image.load("art_assets/forest-level/tile/pipe-entrance.png").convert_alpha()
         elif lvl == 2:
             self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-shans-door.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)

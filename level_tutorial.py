@@ -6,7 +6,7 @@ level_tutorial_map = [
 '                                  F                         XXX     FF                    ',
 '                               B                            XXX         FF                ',
 '                            TTTTTTTTTSTTT   BB              XXX             FF            ',
-'                            XXXXXXXXXXXXX   FF  BB          XXX                FF    EIOOO',
+'                            XXXXXXXXXXXXX   FF  BB          XXX                FF    IOOOO',
 '                                                FF          XXX                    TTTTTTT',
 '                                                    B       XXX                    XXXXXXX',
 '                             FFF         MMM        F       XXX                    XXXXXXX',
