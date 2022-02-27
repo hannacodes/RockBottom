@@ -54,6 +54,7 @@ This two-level platformer game is exactly that. The player plays as our main cha
 ## How we built it
 We built this entirely in python, using the python games api: pygame.
 We used the gui framework made for pygame, called pygame_gui, to help us create interactive, responsive buttons that allowed for a simple, but efficent GUI. 
+Finally, we used the movie, or video framework, OpenCV, to help us implement an animated cutscene. 
 
 --- 
 
@@ -96,7 +97,7 @@ We learned about python, using APIs, and we learned a lot about game design.
 - pygame 
   - using its built in functions to display and make a game
 - Game Design
-  - how to make fun levels and assets 
+  - how to make fun levels and relevant, thematic assets 
 
 --- 
 
