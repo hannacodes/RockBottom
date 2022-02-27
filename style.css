@@ -18,5 +18,17 @@
     font-size:20px;
     list-style:none;
     padding:0;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  p{
+    line-height: 1.6;
+  }
+
+  header{
+    font-size: 40px;
+    font-weight: bold;
+    
   }
 
