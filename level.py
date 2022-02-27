@@ -44,7 +44,7 @@ class Level:
                     boost = Boost((x,y), self.lvl)
                     self.boosts.add(boost)
                 if col == 'E':
-                    end = End((x,y))
+                    end = End((x,y), self.lvl)
                     self.end.add(end)
                 if col == 'M':
                     moving_plat = Moving_Plat((x,y), tile_size, self.lvl)
