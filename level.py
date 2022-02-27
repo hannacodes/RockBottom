@@ -13,8 +13,7 @@ class Level:
         self.curr_x = 0
 
         self.shift_y = 0
-        if self.lvl == 1:
-            self.tutorial_text()
+        self.add_text(self.lvl)
         
     def setup_map(self, level_map):
         self.tiles = pg.sprite.Group()
@@ -47,18 +46,22 @@ class Level:
                     self.end.add(end)
 
 
-    def tutorial_text(self):
+    def add_text(self, lvl):
         self.texts = pg.sprite.Group()
-        text0 = Text(0, (1.5 * tile_size, 8 * tile_size))
-        self.texts.add(text0)
-        text1 = Text(1, (8* tile_size, 7 * tile_size))
-        self.texts.add(text1)
-        text2 = Text(2, (13.5 * tile_size, 9.5 * tile_size))
-        self.texts.add(text2)
-        text3 = Text(3, (53 * tile_size, 7 * tile_size))
-        self.texts.add(text3)
-        text4 = Text(4, (82.6 * tile_size, 5 * tile_size))
-        self.texts.add(text4)
+        if lvl == 1:
+            text0 = Text(0, (1.5 * tile_size, 8 * tile_size))
+            self.texts.add(text0)
+            text1 = Text(1, (8* tile_size, 7 * tile_size))
+            self.texts.add(text1)
+            text2 = Text(2, (13.5 * tile_size, 9.5 * tile_size))
+            self.texts.add(text2)
+            text3 = Text(3, (53 * tile_size, 7 * tile_size))
+            self.texts.add(text3)
+            text4 = Text(4, (82.6 * tile_size, 5 * tile_size))
+            self.texts.add(text4)
+        if lvl == 2:
+            text5 = Text(5, (70.5 * tile_size, 10 * tile_size))
+            self.texts.add(text5)
 
 
     def scroll_x(self):
@@ -169,8 +172,7 @@ class Level:
         return self.end_collide()
 
     def update(self):
-        if self.lvl == 1:
-            self.update_tile(self.texts)
+        self.update_tile(self.texts)
 
         self.update_tile(self.tiles)
         self.update_tile(self.spikes)

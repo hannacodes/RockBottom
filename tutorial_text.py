@@ -18,6 +18,8 @@ class Text(pg.sprite.Sprite):
         elif(num == 4):
             self.image = pg.image.load("art_assets/font-images/the-end.png").convert_alpha()
             self.image = pg.transform.rotozoom(self.image, 0, 0.5)
+        elif(num == 5):
+            self.image = pg.image.load("art_assets/city-level/trust-sign.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
 
     def update(self, shift_x, shift_y):
