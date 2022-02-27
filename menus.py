@@ -1,4 +1,5 @@
 import pygame as pg, pygame_gui as pgui, sys
+import cv2 
 from pygame_gui.core import ObjectID
 from main import level_1, level_2
 from settings import tile_size
@@ -60,7 +61,6 @@ def winner1(screen, curr_level):
                     running = False
 
                 if event.ui_element == button2: 
-                    curr_level += 1
                     if curr_level == 1 :
                         update_str = level_1(screen)
                     elif curr_level == 2:
@@ -127,6 +127,30 @@ def game_over(screen, curr_level):
             manager.process_events(event)
         clock.tick(60)
 
+def play_cutscene(screen, filepath):
+    video = cv2.VideoCapture(filepath)
+    success, video_image = video.read()
+    fps = video.get(cv2.CAP_PROP_FPS)
+
+    run = success
+    while run:
+        clock.tick(fps)
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
+
+        success, video_image = video.read()
+
+        if success:
+            video_surf = pg.image.frombuffer(
+                video_image.tobytes(), video_image.shape[1::-1], "BGR")
+        else:
+            run = False
+        screen.blit(video_surf, (0, 0))
+        pg.display.flip()
+
+
 def level_select(screen):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     layout_rect_1 = pg.Rect(screen_width/11 * 4 - screen_width/6, screen_height/6 * 3.9 - screen_width/4, screen_width/4, screen_width/4)
@@ -151,11 +175,13 @@ def level_select(screen):
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
                     curr_level = 1
+                    play_cutscene(screen, 'countdown-temp-video.mp4')
                     update_str = level_1(screen)
                     if(update_str == "Game Over"):
                         game_over(screen, curr_level)
                     if(update_str == "You Win" ):
                         winner1(screen, curr_level)
+                    running = False
                 if event.ui_element == level2:
                     curr_level = 2
                     update_str = level_2(screen)
@@ -163,6 +189,7 @@ def level_select(screen):
                         game_over(screen, curr_level)
                     if(update_str == "You Win" ):
                         winner1(screen, curr_level)
+                    running = False
             manager.process_events(event)
         clock.tick(60)
 
