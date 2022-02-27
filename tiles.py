@@ -25,6 +25,8 @@ class Tile(pg.sprite.Sprite):
                 self.image = pg.transform.rotozoom(self.image, 0, (size/28))
             if col == 'O':
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tiles-around-shans-door.png").convert_alpha()
+            if col == 'T':
+                self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-middle-window.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     #for scrolling
     def update(self, shift_x, shift_y):
