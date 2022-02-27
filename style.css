@@ -32,6 +32,16 @@
 
   }
   
+  h2{
+      font-size: 25px;
+      font-weight: bold;
+  }
+
+  h3{
+      font-size: 20px;
+      font-weight: bold;
+  }
+
   button{
       line-height: 1.6;
   }
