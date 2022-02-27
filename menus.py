@@ -147,7 +147,7 @@ def level_select(screen):
                 sys.exit()
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
-                    main_menu(screen)
+                    main_menu()
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
                     curr_level = 1
@@ -234,12 +234,14 @@ def roll_credits( screen ):
                     running = False
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == exit:
-                    main_menu(screen)
+                    main_menu()
                     running = False
             
             manager.process_events(event)
 
-def main_menu( screen ):
+def main_menu():
+    pg.display.set_caption('Rock Bottom')
+    screen = pg.display.set_mode((screen_width, screen_height))
 
     manager = pgui.UIManager((screen_width, screen_height), 'menutheme.json')
     top = (screen_width/10) * 3
@@ -291,6 +293,4 @@ def main_menu( screen ):
 
 
 if __name__ == '__main__':
-    pg.display.set_caption('Rock Bottom')
-    screen = pg.display.set_mode((screen_width, screen_height))
-    main_menu(screen)
+    main_menu()
