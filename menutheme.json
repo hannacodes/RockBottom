@@ -24,7 +24,12 @@
     },
     
     "text_box":{
-        "normal_bg": "#000000"
+        "font":{
+            "name": "dogica", 
+            "size": 12, 
+            "style": "regular",
+            "regular_path": "fonts/dogica.ttf"
+        }
     },
 
     "button":{
@@ -48,7 +53,7 @@
             "size": "40", 
             "bold": 0,
             "regular_path": "fonts/dogicapixel.ttf",
-            "bold_path": "fonts/dogicapixelbold.ttf"
+            "bold_path": "fonts/dogicabold.ttf"
         }
     }
 }

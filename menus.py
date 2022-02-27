@@ -1,6 +1,8 @@
+from pip import main
 import pygame as pg, pygame_gui as pgui, sys
 from pygame_gui.core import ObjectID
 from main import level_1, level_2
+from settings import tile_size
 clock = pg.time.Clock()
 pg.init()
 
@@ -43,7 +45,7 @@ def winner1(screen, curr_level):
                     level_select(screen)
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
-                    level_2()
+                    level_2(screen)
                 if event.ui_element == button2: 
                     if curr_level == 1 :
                         update_str = level_1(screen)
@@ -179,6 +181,44 @@ def help(screen):
             
             manager.process_events(event)
 
+def roll_credits( screen ):
+    manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
+    manager.add_font_paths(font_name = 'dogica', regular_path = 'fonts/dogica.ttf', bold_path = '/font/dogicabold.ttf')
+    manager.add_font_paths(font_name = 'dogicapixel', regular_path = 'fonts/dogicapixel.ttf', bold_path = '/font/dogicapixel.ttf')
+    credits = "<font face = dogica color = #FFFFFF size = 6>Credit Reel<br>"
+    credits += "<font face = dogica color = #FFFFFF size = 3><p>Created by: Hanna Koh, Lucy Hu, Esther Loo, <br>and Alyssa Sfravara <br><br>"
+    credits += "All art by Esther Loo<br><br>"
+    credits += "Fonts used: <a href =https://www.dafont.com/dogica.font?fpp=200&psize=l>Dogica</a><br><br>" 
+    credits += "Special thanks to: The event organizers of <br>"
+    credits += "WiCHacks 2022, for putting on such a fun event,<br>"
+    credits += "Shan for helping us come up with the idea, <br>"
+    credits += "Clear Code on YouTube, for teaching us pygame, <br>"
+    credits += "and of course, you, the player, for giving our <br>"
+    credits += "game a try! This project would not be possible <br>without you!</p></font>"
+    credits_layout_rect = pg.Rect(screen_width/4, screen_height/12, ( screen_width/3 )* 2, screen_height/2)
+    credits_textbox = pgui.elements.UITextBox( credits, relative_rect=credits_layout_rect, manager=manager )
+    exit_layout_rect = pg.Rect(screen_width/4, screen_height/12 + screen_height/2 + 10, screen_width/10, screen_height/14)
+    exit = pgui.elements.UIButton(relative_rect=exit_layout_rect, text='Exit', manager=manager, object_id=ObjectID(object_id='#exit_button') )
+    running = True
+    while running: 
+        screen.fill(bg_color)
+        manager.update(60/1000.0)
+        manager.draw_ui(screen)
+        pg.display.update()
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                pg.quit()
+                sys.exit()
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_ESCAPE:
+                    running = False
+            if event.type == pgui.UI_BUTTON_PRESSED:
+                if event.ui_element == exit:
+                    main_menu(screen)
+                    running = False
+            
+            manager.process_events(event)
+
 def main_menu( screen ):
 
     manager = pgui.UIManager((screen_width, screen_height), 'menutheme.json')
@@ -191,7 +231,9 @@ def main_menu( screen ):
     title = pgui.elements.UILabel( relative_rect=t_layout_rect, 
                                     text = 'Rock Bottom',
                                     manager=manager )
-    
+    rock = pg.image.load('art_assets/pet-rock/rock-pet-animation-stand.png')
+    rock = pg.transform.rotozoom(rock, 0, ((tile_size)/14))
+
     b1_layout_rect = pg.Rect(top, left+height+20, width, height)
     button1 = pgui.elements.UIButton(relative_rect=b1_layout_rect, text='Play Game', manager=manager)
     b2_layout_rect = pg.Rect(top, left+height*2+20, width, height)
@@ -202,6 +244,7 @@ def main_menu( screen ):
     running = True
     while running:
         screen.fill(bg_color)
+        screen.blit(rock, (top + top/2, left-tile_size))
         manager.update(60/1000.0)
         manager.draw_ui(screen)
         pg.display.update()
