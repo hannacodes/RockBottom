@@ -60,7 +60,7 @@ class Level:
             text4 = Text(4, (82.6 * tile_size, 5 * tile_size))
             self.texts.add(text4)
         if lvl == 2:
-            text5 = Text(5, (70.5 * tile_size, 10 * tile_size))
+            text5 = Text(5, (73.5 * tile_size, 10 * tile_size))
             self.texts.add(text5)
 
 

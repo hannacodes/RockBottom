@@ -46,6 +46,8 @@ class Tile(pg.sprite.Sprite):
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-left.png").convert_alpha()
             elif col == 'K':
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-right.png").convert_alpha()
+            elif col == 'M':
+                self.image = pg.image.load("art_assets/forest-level/tile/pipe-tile-continued.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     #for scrolling
     def update(self, shift_x, shift_y):
