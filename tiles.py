@@ -40,7 +40,7 @@ class Spike(pg.sprite.Sprite):
             if col == 'R':
                 self.image = pg.image.load("art_assets/city-level/rat.png").convert_alpha()
             if col == 'S':
-                self.image = pg.image.load("art_assets/forest-level/poison/poison-middle-new.png").convert_alpha()
+                self.image = pg.image.load("art_assets/city-level/drone.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
         self.rect.x += shift_x
