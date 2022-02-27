@@ -5,6 +5,8 @@ from level import *
 class Tile(pg.sprite.Sprite):
     def __init__(self, pos, col, size, lvl):
         super().__init__()
+        #loads images and sizes them properly for all level one tile variables
+
         if lvl == 1:
             if col == 'T':
                 self.image = pg.image.load("art_assets/forest-level/tile/forest-tile-middle.png").convert_alpha()
@@ -32,6 +34,8 @@ class Tile(pg.sprite.Sprite):
             elif col == 'V':
                 self.image = pg.image.load("art_assets/forest-level/platform/forest-single-platform.png").convert_alpha()
                 self.image = pg.transform.rotozoom(self.image, 0, (size/28))
+
+        #loads images and sizes for all level two tile variables
         if lvl == 2:
             if col == 'X':
                 self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-middle.png").convert_alpha()
@@ -53,6 +57,8 @@ class Tile(pg.sprite.Sprite):
     def update(self, shift_x, shift_y):
         self.rect.x += shift_x
         self.rect.y += shift_y
+
+#every class below is a special tile that sets image and position as well as updating constantly
 
 class Spike(pg.sprite.Sprite):
     def __init__(self, pos, col, lvl):
