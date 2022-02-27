@@ -8,7 +8,8 @@ bg_color = (130, 95, 118)
 
 screen_width, screen_height = 1200, 900
 
-def winner1(screen):
+
+def winner1(screen, curr_level):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     top = (screen_width/10) * 3
     left = screen_height/5
@@ -44,11 +45,14 @@ def winner1(screen):
                 if event.ui_element == button1:
                     level_2()
                 if event.ui_element == button2: 
-                    update_str = level_1()
+                    if curr_level == 1 :
+                        update_str = level_1(screen)
+                    elif curr_level == 2:
+                        update_str = level_2(screen)
                     if(update_str == "Game Over"):
-                        game_over(screen)
-                    if(update_str == "You Win" ):
-                        winner1(screen)
+                        game_over(screen, curr_level)
+                    if(update_str == "You Win"):
+                        winner1(screen, curr_level)
 
                     running=False
 
@@ -59,7 +63,7 @@ def winner1(screen):
             manager.process_events(event)
         clock.tick(60)
 
-def game_over(screen):
+def game_over(screen, curr_level):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
     top = (screen_width/10) * 3
     left = screen_height/5
@@ -91,11 +95,15 @@ def game_over(screen):
                     running = False
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
-                    update_str = level_1()
+                    if curr_level == 1:
+                        update_str = level_1(screen)
+                    elif curr_level == 2: 
+                        update_str = level_2(screen)
+
                     if(update_str == "Game Over"):
-                        game_over(screen)
+                        game_over(screen, curr_level)
                     if(update_str == "You Win" ):
-                        winner1(screen)
+                        winner1(screen, curr_level)
                 if event.ui_element == button2:
                     level_select(screen)
                     return False
@@ -123,18 +131,22 @@ def level_select(screen):
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     main_menu(screen)
-                if event.key == pg.K_SPACE:
-                    level_1()
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == level1:
-                    update_str = level_1()
+                    curr_level = 1
+                    update_str = level_1(screen)
                     if(update_str == "Game Over"):
-                        game_over(screen)
+                        game_over(screen, curr_level)
                     if(update_str == "You Win" ):
-                        winner1(screen)
+                        winner1(screen, curr_level)
                 if event.ui_element == level2:
+                    curr_level = 2
                     print("button clicked")
                     update_str = level_2(screen)
+                    if(update_str == "Game Over"):
+                        game_over(screen, curr_level)
+                    if(update_str == "You Win" ):
+                        winner1(screen, curr_level)
             manager.process_events(event)
         clock.tick(60)
 
@@ -217,5 +229,5 @@ def main_menu( screen ):
 
 if __name__ == '__main__':
     pg.display.set_caption('Rock Bottom')
-    screen = pg.display.set_mode((screen_width, screen_height),0,32)
+    screen = pg.display.set_mode((screen_width, screen_height))
     main_menu(screen)
