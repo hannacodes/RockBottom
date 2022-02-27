@@ -1,16 +1,38 @@
 # RockBottom
-WiCHacks 2022 Project - a platformer game that is centered around the story of a pet rock
+Createed by Hanna Koh, Lucy Hu, Esther Loo, and Alyssa Sfravara for WiCHacks 2022 
+
+Rock Bottom is a platformer game that is centered around the story of a pet rock
+
+## Story
+This game tells the story of a pet rock who has been accidentally dropped down a drain. Join it on its way back to its home!
 
 ## Description
-This is a 2D platformer game that we created with Pygame and Pygame_Gui.
+This is a 2D platformer game that we created with Python, and Python APIs: Pygame, Pygame_Gui, and OpenCV
 
 --- 
 
 ## Want to try it out?
-Install these three api's: 
-```$ pip install pygame```
-```$ pip install pygame_gui```
-```$ pip install opencv-python```
+Install these three api's by typing into terminal/command prompt: 
+```
+$ pip install pygame
+```
+```
+$ pip install pygame_gui
+```
+```
+$ pip install opencv-python
+```
+
+For mac users:
+```
+$ pip3 install pygame
+```
+```
+$ pip3 install pygame_gui
+```
+```
+$ pip3 install opencv-python
+```
 
 ---
 
