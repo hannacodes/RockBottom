@@ -1,0 +1,22 @@
+/* Website for RockBottom 
+   Author: Hanna Koh
+   Date: 2/26-27/2022 */
+
+  @font-face {
+    font-family: Dogica;
+    src: url(fonts/dogica.ttf);
+  }
+
+  @font-face {
+    font-family: Dogica;
+    src: url(fonts/dogicabold.ttf);
+    font-weight:bold
+  }
+
+  *{ 
+    font-family: 'Dogica', monospace;
+    font-size:20px;
+    list-style:none;
+    padding:0;
+  }
+
