@@ -23,6 +23,10 @@
     margin-right: 5vw;
   }
 
+  body{ 
+    background-color: #281a36;
+  }
+
   p{
     line-height: 1.6;
   }

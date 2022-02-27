@@ -1,6 +1,3 @@
-from math import fabs
-from turtle import update
-from pip import main
 import pygame as pg, pygame_gui as pgui, sys
 from pygame_gui.core import ObjectID
 from main import level_1, level_2
