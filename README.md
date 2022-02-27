@@ -49,10 +49,20 @@ We learned about python, using APIs, and we learned a lot about game design.
 --- 
 
 ## What's next for Rock Bottom
-We actually drafted two additional levels, that we hope to implement in the future. 
+Hope to implement these in the future:
 - Additional Levels
+  - Underwater ocean level 
+  - Sewer pipes level 
 - Moving Platforms
 - Collectibles
-- Lives/Checkpoints
+  - incentivize player to reach difficult places
+  - for completion 
+  - function as power-up
+- Checkpoints 
+  - makes dying less frustrating 
+  - can lengthen the levels 
+- Lives
+  - 3 Lives 
+  - lose all three, respawn to checkpoint rather than start
 
 
