@@ -12,7 +12,7 @@ This is a 2D platformer game that we created with Python, and Python APIs: Pygam
 --- 
 
 ## Want to try it out?
-Install these three api's by typing into terminal/command prompt: 
+Install these three apis by typing into terminal/command prompt: 
 ```
 $ pip install pygame
 ```
@@ -53,6 +53,7 @@ This two-level platformer game is exactly that. The player plays as our main cha
 
 ## How we built it
 We built this entirely in python, using the python games api: pygame.
+We used the gui framework made for pygame, called pygame_gui, to help us create interactive, responsive buttons that allowed for a simple, but efficent GUI. 
 
 --- 
 
