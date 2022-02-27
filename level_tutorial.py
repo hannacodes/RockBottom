@@ -18,7 +18,18 @@ level_tutorial_map = [
 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 ]
 
-#L left tile edge
-#K right tile edge
-#N left plat edge
-#M right tile edge
+'''
+Symbols 
+X   dirt tile 
+T   grass tile 
+L   left grass tile 
+K   right grass tile
+F   single platform with sharp edges 
+N   left platform edge
+M   right platorm edge
+V   single platform with rounded edges
+S   poison pool 
+B   mushroom boost 
+E   end condition
+O   continuing pipes of end condition
+'''
