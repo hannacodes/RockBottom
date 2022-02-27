@@ -50,8 +50,8 @@ def level_2(screen):
     level = Level(level_city_map, screen, 2)
 
     city_surf = pg.image.load("art_assets/city-level/city-level-background.png").convert_alpha()
-    city_surf = pg.transform.rotozoom(city_surf, 0, 3)
-    
+    city_surf = pg.transform.rotozoom(city_surf, 0, 3.5)
+
     game_active = True
     win_condition = False
     running = True
