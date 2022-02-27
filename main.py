@@ -76,7 +76,6 @@ def level_2(screen):
             return "You Win"
         
         elif game_active:  
-            screen.fill((130, 95, 118))
             screen.blit(city_surf, (0,0))
             game_active = level.update()
             win_condition = level.end_collide()

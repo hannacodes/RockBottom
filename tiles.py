@@ -27,10 +27,15 @@ class Tile(pg.sprite.Sprite):
         self.rect.y += shift_y
 
 class Spike(pg.sprite.Sprite):
-    def __init__(self, pos, lvl):
+    def __init__(self, pos, col, lvl):
         super().__init__()
-        if lvl == 1 or lvl == 2:
+        if lvl == 1:
             self.image = pg.image.load("art_assets/forest-level/poison/poison-middle-new.png").convert_alpha()
+        if lvl == 2:
+            if col == 'R':
+                self.image = pg.image.load("art_assets/city-level/rat.png").convert_alpha()
+            if col == 'S':
+                self.image = pg.image.load("art_assets/forest-level/poison/poison-middle-new.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
         self.rect.x += shift_x
@@ -39,8 +44,10 @@ class Spike(pg.sprite.Sprite):
 class Boost(pg.sprite.Sprite):
     def __init__(self, pos, lvl):
         super().__init__()
-        if lvl == 1 or lvl == 2:
+        if lvl == 1:
             self.image = pg.image.load("art_assets/forest-level/bouncy-mushroom.png").convert_alpha()
+        if lvl == 2:
+            self.image = pg.image.load("art_assets/city-level/bouncy-city-awning-darker.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
         self.rect.x += shift_x
