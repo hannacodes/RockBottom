@@ -27,7 +27,7 @@ class Level:
             for col_index, col in enumerate(row):
                 x = col_index * tile_size
                 y = row_index * tile_size
-                if col == 'X' or col == 'T' or col == 'F':
+                if col == 'X' or col == 'T' or col == 'F' or col == 'I' or col == 'O':
                     tile = Tile((x, y), col, tile_size, self.lvl)
                     self.tiles.add(tile)
                 if col == 'P':
