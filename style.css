@@ -29,6 +29,9 @@
   header{
     font-size: 40px;
     font-weight: bold;
-    
-  }
 
+  }
+  
+  button{
+      line-height: 1.6;
+  }
