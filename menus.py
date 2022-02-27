@@ -1,3 +1,4 @@
+from math import fabs
 from pip import main
 import pygame as pg, pygame_gui as pgui, sys
 from pygame_gui.core import ObjectID
@@ -55,7 +56,6 @@ def winner1(screen, curr_level):
                         game_over(screen, curr_level)
                     if(update_str == "You Win"):
                         winner1(screen, curr_level)
-
                     running=False
 
                 if event.ui_element == button3:
@@ -101,14 +101,14 @@ def game_over(screen, curr_level):
                         update_str = level_1(screen)
                     elif curr_level == 2: 
                         update_str = level_2(screen)
-
                     if(update_str == "Game Over"):
                         game_over(screen, curr_level)
                     if(update_str == "You Win" ):
                         winner1(screen, curr_level)
+                    running = False
                 if event.ui_element == button2:
                     level_select(screen)
-                    return False
+                    running = False
             manager.process_events(event)
         clock.tick(60)
 
