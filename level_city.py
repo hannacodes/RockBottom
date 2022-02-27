@@ -1,5 +1,26 @@
-import pygame, sys
 
+level_city_map =[
+'                                                              B S       B     XX        XX    ',
+'                                                         S     S       XXX    XXSS      XX    ',
+'                                                         S                    XX       SXX    ',
+'                                                           B         SSSSSSSS XXSS      XX    ',
+'                                                               B              XX        XX    ',
+'                                                                S    S        XX   SS   XX    ',
+'                                                                S             XX        XX    ',
+'                                                                   B      S   XX      SSXX    ',
+'                                                                          S   XX        XX    ',
+'                                                           R  S         B S   XXS       XX    ',
+'                                                          XXXXXXX             XX   S   SXX    ',
+'                                                          XXXXXXX             XX        XX    ',
+'                                            XX        XX  XXXXXXX       B     XXS       XX    ',
+'P                C                       R      R         XXXXXXX             XX       SXX    ',
+'XXXXXX  XX  XX  XX   XX               XXXXXXXXXXXXXX     BXXXXXXX         B   XX   SS   XX    ',
+'XXXXXXXXXXXXXXXXXX        XX          XXXXXXXXXXXXXX      XXXXXXX      B      XX            E ',
+'XXXXXXXXXXXXXXXXXX  XX          BBBB  XXXXXXXXXXXXXX      XXXXXXX  B          XXXXXXXXXXXXXXX ',
+'XXXXXXXXXXXXXXXXXX       XX           XXXXXXXXXXXXXX      XXXXXXX             XXXXXXXXXXXXXXX ',
+'XXXXXXXXXXXXXXXXXXSSSSSSSSSSSSSSSSSSSSXXXXXXXXXXXXXXSSSSSSXXXXXXXSSSSSSSSSSSSSXXXXXXXXXXXXXXX ',
+]
+'''
 level_city_map =[
 '                                                                       SSSS                   ',
 '                                                          SSSSSSS                             ',
@@ -23,8 +44,9 @@ level_city_map =[
 'XXXXXXXXXXXXXXXXXX        XX          XXXXXXXXXXXXXX      XXXXXXX      B      XX            E ',
 'XXXXXXXXXXXXXXXXXX  XX          AAAA  XXXXXXXXXXXXXX      XXXXXXX  B          XXXXXXXXXXXXXXX ',
 'XXXXXXXXXXXXXXXXXX       XX           XXXXXXXXXXXXXX      XXXXXXX             XXXXXXXXXXXXXXX ',
-'XXXXXXXXXXXXXXXXXXSSSSSSSSSSSSSSSSSSSSXXXXXXXXXXXXXXSSSSSSXXXXXXXSSSSSSSSSSSSSXXXXXXXXXXXXXXX '
+'XXXXXXXXXXXXXXXXXXSSSSSSSSSSSSSSSSSSSSXXXXXXXXXXXXXXSSSSSSXXXXXXXSSSSSSSSSSSSSXXXXXXXXXXXXXXX ',
 ]
+'''
 
 #A = awning sprite (bouncy pad)
 #B = boost pad
