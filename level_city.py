@@ -20,3 +20,18 @@ level_city_map =[
 'XXXXXXXXXXXXXXXXXXXXXSSSSSSSSSSSSSSSSSSSSSSXXXXXXXXXXXXXXSSSSSSSSSXXXXXXXSSSSSSSSSSSSXXXXXXXXXXXXXXXX',
 'XXTTTXXTTXXXTTXXTTTXXXXXXXXXXXXXXXXXXXXXXXXXTXTTXTTXTTXTXXXXXXXXXXXTXTXTXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
 ]
+
+'''
+Symbols 
+X   building tile 
+T   window tile 
+L   left building tile 
+K   right building tile
+F   single platform with rounded edges
+M   continuing pipe from previous level
+S   dangerous drone
+R   rat
+B   awning boost 
+E   end condition door 
+O   surrounding end condition door tiles
+'''
