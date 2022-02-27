@@ -46,11 +46,12 @@ def level_1(screen):
         clock.tick(60)
 
 def level_2(screen):
-    print("level 2 called")
-    level = Level(level_city_map, screen, 1)
+    
+    level = Level(level_city_map, screen, 2)
 
-    forest_surf = pg.image.load("art_assets/forest-level/forest-level-background-altered1.png").convert_alpha()
-
+    city_surf = pg.image.load("art_assets/city-level/city-level-background.png").convert_alpha()
+    city_surf = pg.transform.rotozoom(city_surf, 0, 3)
+    
     game_active = True
     win_condition = False
     running = True
@@ -62,9 +63,10 @@ def level_2(screen):
             if not game_active: 
                 if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                     game_active = True
-                    level = Level(level_tutorial_map, screen, 1)
+                    level = Level(level_tutorial_map, screen, 2)
                     game_active = level.update()
                     win_condition = level.end_collide()
+            
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     running = False
@@ -72,8 +74,9 @@ def level_2(screen):
         if win_condition: 
             running = False
             return "You Win"
-        elif game_active:    
-            screen.blit(forest_surf, (0,0))
+        
+        elif game_active:  
+            screen.blit(city_surf, (0,0))
             game_active = level.update()
             win_condition = level.end_collide()
         elif not game_active and not win_condition:
@@ -83,4 +86,5 @@ def level_2(screen):
         clock.tick(60)
 
 if __name__ == '__main__':
-    level_1()
+    screen = pg.display.set_mode((screen_width, screen_height))
+    level_2(screen)

@@ -17,6 +17,9 @@ class Tile(pg.sprite.Sprite):
                 self.image = pg.image.load("art_assets/forest-level/tile/pipe-entrance.png").convert_alpha()
             elif col == 'O':
                 self.image = pg.image.load("art_assets/forest-level/tile/pipe-tile-continued.png").convert_alpha()
+        if lvl == 2:
+            if col == 'X':
+                self.image = pg.image.load("art_assets/city-level/platforms-and-tiles/city-tile-middle.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     #for scrolling
     def update(self, shift_x, shift_y):
@@ -26,7 +29,7 @@ class Tile(pg.sprite.Sprite):
 class Spike(pg.sprite.Sprite):
     def __init__(self, pos, lvl):
         super().__init__()
-        if lvl == 1:
+        if lvl == 1 or lvl == 2:
             self.image = pg.image.load("art_assets/forest-level/poison/poison-middle-new.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
@@ -36,7 +39,7 @@ class Spike(pg.sprite.Sprite):
 class Boost(pg.sprite.Sprite):
     def __init__(self, pos, lvl):
         super().__init__()
-        if lvl == 1:
+        if lvl == 1 or lvl == 2:
             self.image = pg.image.load("art_assets/forest-level/bouncy-mushroom.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
     def update(self, shift_x, shift_y):
