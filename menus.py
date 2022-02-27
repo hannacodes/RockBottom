@@ -47,15 +47,18 @@ def winner1(screen, curr_level):
             if event.type == pgui.UI_BUTTON_PRESSED:
                 if event.ui_element == button1:
                     level_2(screen)
+                    curr_level = 2
                 if event.ui_element == button2: 
+                    curr_level += 1
                     if curr_level == 1 :
                         update_str = level_1(screen)
                     elif curr_level == 2:
                         update_str = level_2(screen)
                     if(update_str == "Game Over"):
                         game_over(screen, curr_level)
-                    if(update_str == "You Win"):
+                    if(update_str == "You Win" and curr_level == 1):
                         winner1(screen, curr_level)
+
                     running=False
 
                 if event.ui_element == button3:
@@ -101,6 +104,7 @@ def game_over(screen, curr_level):
                         update_str = level_1(screen)
                     elif curr_level == 2: 
                         update_str = level_2(screen)
+                    
                     if(update_str == "Game Over"):
                         game_over(screen, curr_level)
                     if(update_str == "You Win" ):
