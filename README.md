@@ -6,6 +6,14 @@ This is a 2D platformer game that we created with Pygame and Pygame_Gui.
 
 --- 
 
+## Want to try it out?
+Install these three api's: 
+'''$ pip install pygame'''
+'''$ pip install pygame_gui'''
+'''pip install opencv-python'''
+
+---
+
 ## Inspiration
 We knew that we wanted to do a game since when we saw the categories, since it is something that none of us have ever done throughly before. 
 We asked our friends for ideas, and we came up with a story of a pet rock that gets dropped into a drain and has to find their way back home 
@@ -22,7 +30,7 @@ This two-level platformer game is exactly that. The player plays as our main cha
 --- 
 
 ## How we built it
-We built this entirely in python, using the python games api: pygame. 
+We built this entirely in python, using the python games api: pygame.
 
 --- 
 
