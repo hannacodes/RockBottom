@@ -1,5 +1,7 @@
 import pygame as pg
 
+#class for text to be placed onto levels
+#separate from tiles because doesn't detect collision
 class Text(pg.sprite.Sprite):
     def __init__(self, num, pos):
         super().__init__()
@@ -15,6 +17,7 @@ class Text(pg.sprite.Sprite):
         elif(num == 3):
             self.image = pg.image.load("art_assets/font-images/bounce.png").convert_alpha()
             self.image = pg.transform.rotozoom(self.image, 0, 0.5)
+        #for level 2
         elif(num == 4):
             self.image = pg.image.load("art_assets/font-images/the-end.png").convert_alpha()
             self.image = pg.transform.rotozoom(self.image, 0, 0.5)
