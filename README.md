@@ -7,7 +7,7 @@ This is a 2D platformer game that we created with Pygame and Pygame_Gui.
 --- 
 
 ## Want to try it out?
-Install these three api's: 
+Install these three api's by typing into terminal/command prompt: 
 ```
 $ pip install pygame
 ```
@@ -16,6 +16,17 @@ $ pip install pygame_gui
 ```
 ```
 $ pip install opencv-python
+```
+
+For mac users:
+```
+$ pip3 install pygame
+```
+```
+$ pip3 install pygame_gui
+```
+```
+$ pip3 install opencv-python
 ```
 
 ---
