@@ -1,4 +1,5 @@
 from math import fabs
+from turtle import update
 from pip import main
 import pygame as pg, pygame_gui as pgui, sys
 from pygame_gui.core import ObjectID
@@ -45,9 +46,15 @@ def winner1(screen, curr_level):
                     running = False 
                     level_select(screen)
             if event.type == pgui.UI_BUTTON_PRESSED:
-                if event.ui_element == button1:
-                    level_2(screen)
+                if event.ui_element == button1 and curr_level == 1:
+                    update_str = level_2(screen)
                     curr_level = 2
+                    if(update_str == "Game Over"):
+                        game_over(screen, curr_level)
+                    if(update_str == "You Win" and curr_level == 1):
+                        winner1(screen, curr_level)
+
+                    running = False
                 if event.ui_element == button2: 
                     curr_level += 1
                     if curr_level == 1 :
@@ -147,7 +154,6 @@ def level_select(screen):
                         winner1(screen, curr_level)
                 if event.ui_element == level2:
                     curr_level = 2
-                    print("button clicked")
                     update_str = level_2(screen)
                     if(update_str == "Game Over"):
                         game_over(screen, curr_level)
