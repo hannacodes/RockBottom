@@ -49,7 +49,7 @@ def winner1(screen):
                         game_over(screen)
                     if(update_str == "You Win" ):
                         winner1(screen)
-                        
+
                     running=False
 
                 if event.ui_element == button3:
@@ -104,8 +104,8 @@ def game_over(screen):
 
 def level_select(screen):
     manager = pgui.UIManager((screen_height, screen_width), 'menutheme.json')
-    layout_rect_1 = pg.Rect(screen_width/3 - screen_width/6, screen_height/2 - screen_width/4, screen_width/4, screen_width/4)
-    layout_rect_2 = pg.Rect((screen_width/3)*2 - screen_width/6, screen_height/2 - screen_width/4, screen_width/4, screen_width/4)
+    layout_rect_1 = pg.Rect(screen_width/11 * 4 - screen_width/6, screen_height/6 * 3.9 - screen_width/4, screen_width/4, screen_width/4)
+    layout_rect_2 = pg.Rect(screen_width/11 * 7.3 - screen_width/6, screen_height/6 * 3.9 - screen_width/4, screen_width/4, screen_width/4)
 
     level1 = pgui.elements.UIButton(relative_rect=layout_rect_1, text='Level One', manager=manager)
     level2 = pgui.elements.UIButton(relative_rect=layout_rect_2, text='Level Two', manager=manager)
@@ -215,6 +215,6 @@ def main_menu( screen ):
 
 
 if __name__ == '__main__':
-    pg.display.set_caption('Main Menu')
+    pg.display.set_caption('Rock Bottom')
     screen = pg.display.set_mode((screen_width, screen_height),0,32)
     main_menu(screen)
