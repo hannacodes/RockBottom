@@ -48,8 +48,17 @@ class Level:
 
     def tutorial_text(self):
         self.texts = pg.sprite.Group()
-        text = Text(0, (2 * tile_size, 8 * tile_size))
-        self.texts.add(text)
+        text0 = Text(0, (1.5 * tile_size, 8 * tile_size))
+        self.texts.add(text0)
+        text1 = Text(1, (8* tile_size, 7 * tile_size))
+        self.texts.add(text1)
+        text2 = Text(2, (13.5 * tile_size, 9.5 * tile_size))
+        self.texts.add(text2)
+        text3 = Text(3, (53 * tile_size, 7 * tile_size))
+        self.texts.add(text3)
+        text4 = Text(4, (82.3 * tile_size, 5 * tile_size))
+        self.texts.add(text4)
+
 
     def scroll_x(self):
         player = self.player.sprite
