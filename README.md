@@ -59,6 +59,13 @@ We're proud of being able to complete a whole game in just 24 hours!
 
 ## What we learned
 We learned about python, using APIs, and we learned a lot about game design. 
+- Using python 
+  - syntax 
+  - initializing classes and using functions
+- pygame 
+  - using its built in functions to display and make a game
+- Game Design
+  - how to make fun levels and assets 
 
 --- 
 
