@@ -22,7 +22,6 @@ class Level:
         self.spikes = pg.sprite.Group()
         self.boosts = pg.sprite.Group()
         self.end = pg.sprite.GroupSingle()
-        self.moving_plats = pg.sprite.Group()
 
         for row_index, row in enumerate(level_map):
             for col_index, col in enumerate(row):
@@ -46,9 +45,6 @@ class Level:
                 if col == 'E':
                     end = End((x,y), self.lvl)
                     self.end.add(end)
-                if col == 'M':
-                    moving_plat = Moving_Plat((x,y), tile_size, self.lvl)
-                    self.moving_plats.add(moving_plat)
 
 
     def tutorial_text(self):
@@ -165,17 +161,6 @@ class Level:
             return True
         return False
 
-    def moving_plat_collide(self, Tile):
-        plat_vel = 5
-        player = self.player.sprite
-        if pg.sprite.spritecollideany(player, Moving_Plat):
-            player.bottom = self.rect.top
-            player.left += plat_vel
-        player.top += 0.8
-        self.rect.left += plat_vel
-
-
-
     def update_tile(self, sprites):
         sprites.update( self.shift_x, self.shift_y)
         sprites.draw(self.display_surf)
@@ -191,7 +176,6 @@ class Level:
         self.update_tile(self.spikes)
         self.update_tile(self.boosts)
         self.update_tile(self.end)
-        self.update_tile(self.moving_plats)
         self.boost_collide()
         self.scroll_x()
         self.scroll_y()
