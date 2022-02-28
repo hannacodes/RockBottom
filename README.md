@@ -12,7 +12,11 @@ This is a 2D platformer game that we created with Python, and Python APIs: Pygam
 --- 
 
 ## Want to try it out?
-Install these three apis by typing into terminal/command prompt: 
+Steps: 
+1. Make sure you have python installed on your computer
+2. Clone the git repository 
+3. Install these three apis by typing the following commands into terminal/command prompt
+4. Run the menus.py file.  
 ```
 $ pip install pygame
 ```
@@ -33,6 +37,7 @@ $ pip3 install pygame_gui
 ```
 $ pip3 install opencv-python
 ```
+Confused? Watch [this video!](https://www.youtube.com/watch?v=i2Uba38gnn0)
 
 ---
 
